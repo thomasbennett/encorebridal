@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>Testimonials_Pro</name>
+    <version>1.3</version>
+    <stability>stable</stability>
+    <license uri="http://turnkeye.com">OSL 3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Testimonials module for Magento</summary>
+    <description>Testimonials Pro for Magento is a convenient extension that deals with customer testimonials.
+
+This extension is developed and supported by Turnkeye.com.</description>
+    <notes>Testimonials module for Magento</notes>
+    <authors><author><name>Turnkeye.com</name><user>auto-converted</user><email>info@turnkeye.com</email></author></authors>
+    <date>2010-12-23</date>
+    <time>09:53:17</time>
+    <contents><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="testimonial.xml" hash="2d34bbec64231c9542882b33726a936e"/></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="testimonial.xml" hash="ab2c4ccebe52a986dd05dfba91e88d99"/></dir><dir name="template"><dir name="testimonial"><file name="testimonials.phtml" hash="823fe19b0fbc2e88c6b7eaa6bc406bd7"/><file name="testimonials_box.phtml" hash="ba1af985ec523cff9ea8ad72d4cf0d15"/></dir></dir></dir></dir></dir></target><target name="mage"><dir name="app"><dir name="etc"><dir name="modules"><file name="Turnkeye_Testimonial.xml" hash="87a120f6e8d146946bfbfd6aa35185a6"/></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><file name="testimonial.css" hash="0e134886daf2c5bde461e2e7ae6befcc"/></dir><dir name="images"><file name="i_block_testimonials.gif" hash="2a362804d73f72c313ea85f5e422e722"/><file name="quote.gif" hash="911c53c43cd218ea1ac9f977c8278c1d"/></dir></dir></dir></dir></target><target name="magecommunity"><dir><dir name="Turnkeye"><dir name="Testimonial"><dir name="Block"><file name="Testimonial.php" hash="16b133bf2ba5e891c283be80c32cba5e"/><file name="View.php" hash="dd3b8fcd72ac240dcc620b4d0173815b"/><dir name="Adminhtml"><file name="Testimonial.php" hash="05f2086cce307b6e35b43951fd4b5cdd"/><dir name="Testimonial"><file name="Edit.php" hash="3423a07b412683ce719a6d6ad868b1ff"/><file name="Grid.php" hash="5936bd1a9d6e230658ecdc4d46a324e9"/><dir name="Edit"><file name="Form.php" hash="92f8fbd86c4cf300e1b5dcd9adbaf902"/></dir></dir></dir></dir><dir name="controllers"><file name="IndexController.php" hash="029517c60ee36c01ad4803527fbb5d25"/><file name="TestimonialController.php" hash="a6a8d91393433fe07bc576568267e216"/><dir name="Adminhtml"><file name="TestimonialController.php" hash="3b18509619bf88679124a04f3bf7cdaf"/></dir></dir><dir name="etc"><file name="config.xml" hash="a4b9a0a27dbd94cae8c515851ea47a07"/></dir><dir name="Helper"><file name="Data.php" hash="be31877a52a583f187fd47baf7988d7b"/><dir name="Form"><file name="Image.php" hash="e276f95223869d1cb1170697538b633a"/></dir></dir><dir name="Model"><file name="Model.php" hash="bd28b40ee5f81f0441958c76e5e07acc"/><file name="Status.php" hash="0b7a313a21632a74e3de6a1e64746a68"/><file name="Testimonial.php" hash="4fc570735b06ae919aba990a731216ab"/><dir name="Mysql4"><file name="Testimonial.php" hash="d42c241f6d50d94927c874459bd1ea9a"/><dir name="Testimonial"><file name="Collection.php" hash="2c3873cbc44337b059ab39567957c371"/></dir></dir><dir name="Wysiwyg"><file name="Config.php" hash="3663e8afee84cf07ec468a5e65f80cb1"/></dir></dir><dir name="sql"><dir name="testimonial_setup"><file name="mysql4-install-1.0.0.php" hash="c6b188b65f2a2b5345a9f0f99b7d8f23"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>
