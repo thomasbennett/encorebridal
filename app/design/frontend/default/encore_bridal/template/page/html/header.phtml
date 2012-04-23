@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<!-- HEADER -->
+		<div id="header">
+			<!-- TOP NAVIGATION -->
+			<div class="right" id="top_nav">
+				<div id="search">
+                                    <form method="get" action="<?php echo $this->helper('catalogsearch')->getResultUrl() ?>" id="search_mini_form">
+					<input type="text" class="text" value="" name="q" /><input type="submit" class="submit" value="SEARCH" name="submit" />
+
+                                        <div class="search-autocomplete" id="search_autocomplete" style="display: none;"></div>
+                                        <script type="text/javascript">
+                                        //&lt;![CDATA[
+                                            var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search entire store here...');
+                                            searchForm.initAutocomplete('<?php echo $this->getUrl('') ?>catalogsearch/ajax/suggest/', 'search_autocomplete');
+                                        //]]&gt;
+                                        </script>
+                                    </form>
+				</div>
+				<!--<a href="#" class="login">LOGIN</a> |
+				<a href="#">CART</a> |-->
+                                <?php echo $this->getChildHtml('topLinks') ?>
+				<a href="<?php echo $this->getUrl()."contacts";?>">CONTACT</a> |
+				<a href="#">310.545.1409</a>
+			</div>
+
+			<!-- LOGO -->
+			<div id="logo"><a href="<?php echo $this->getUrl('') ?>"><img src="<?php echo $this->getSkinUrl('images/logo.png'); ?>" alt="Encore Bridal" /></a></div>
+
+			<!-- NAVIGATION -->
+			<div id="navigation">
+				<ul>
+					<li class="home"><a href="<?php echo $this->getUrl('') ?>">home</a></li>
+                                        <?php get_categories();?>
+					<li class="for_brides"><a href="<?php echo $this->getUrl('')."for_brides"?>">for brides</a></li>
+					<li class="consignors"><a href="<?php echo $this->getUrl('')."consignors"?>">consignors</a></li>
+					<li class="about"><a href="<?php echo $this->getUrl('')."about"?>">about</a></li>
+					<li class="blog"><a href="<?php echo $this->getUrl('')."blog"?>">blog</a></li>
+				</ul>
+			</div>
+		</div><br clear="both" />
+
+                <?php
+                //require_once 'app/Mage.php';
+                Mage::app();
+
+                function get_categories()
+                {
+
+                    $category = Mage::getModel('catalog/category');
+                    $tree = $category->getTreeModel();
+                    $tree->load();
+
+                    $ids = $tree->getCollection()->getAllIds();
+
+                    if ($ids)
+                    {
+                        foreach ($ids as $id)
+                        {
+                            $cat = Mage::getModel('catalog/category');
+                            $cat->load($id);
+                            if($cat->getName() != "Root Catalog" && $cat->getName() != "Default Category")
+                            {
+                                echo "<li class='".strtolower($cat->getName())."'><a href='".$cat->getUrl()."'>".strtoupper($cat->getName())."</a></li>";
+                            }
+                        }
+                    }
+
+                }
+                ?>

@@ -1,0 +1,81 @@
+<!-- NEW PRODUCTS -->
+		<h2 class="paint" id="heading_new_products">new products</h2>
+
+               <?php
+                    $todayDate  = Mage::app()->getLocale()->date()->toString(Varien_Date::DATETIME_INTERNAL_FORMAT);
+                    $collection = Mage::getResourceModel('catalog/product_collection')
+                            ->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes());
+
+                    $collection
+                        ->addAttributeToFilter('news_from_date', array('date' => true, 'to' => $todayDate))
+                        ->addAttributeToFilter('news_to_date', array('or'=> array(
+                            0 => array('date' => true, 'from' => $todayDate),
+                            1 => array('is' => new Zend_Db_Expr('null')))
+                        ), 'left');
+
+                    $cnt = 0;
+                    if($collection->count())
+                    {
+                        foreach ($collection as $_product)  {
+                            if($cnt >=2) break;
+                            $product = Mage::getModel('catalog/product')->load($_product->getId());
+                            $prod_image = "";
+                            foreach ($product->getMediaGalleryImages() as $image) {
+                                $prod_image = $image->getUrl();
+                                break;
+                            }
+                            if($prod_image == "")
+                                $prod_image = $product->getImageUrl();
+                        ?>
+                        <div class="span-8">
+                            <div class="product_box">
+                                <a href="<?php echo $_product->getProductUrl() ?>" style="text-align:center; display: block; width: 100%;">
+                                    <img src="<?php echo $prod_image; ?>" style="height: 298px; width: auto;"/>
+                                </a>
+				<div class="product_details">
+					<a href="<?php echo $_product->getProductUrl() ?>" class="more">More Information</a>
+					<h3><a href="<?php echo $_product->getProductUrl() ?>"><?php echo $product->getName();?></a></h3>
+				</div>
+                            </div>
+                        </div>
+                        <?php
+                        $cnt++;
+                        }
+                    }
+                    while($cnt < 2)
+                    {
+                        ?>
+                         <div class="span-8">
+                            <div class="product_box">
+                                <a href="#" style="text-align:center; display: block; width: 100%;">
+                                    <img src="" style="height: 221px; width: auto;"/>
+                                </a>
+				<div class="product_details">
+					<a href="#" class="more"></a>
+					<h3><a href="#"></a></h3>
+				</div>
+                            </div>
+                        </div>
+                        <?php
+                        $cnt++;
+                    }
+                    ?>
+                
+		<div class="span-8 last">
+			<div id="testimonial_box">
+                                <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
+                                <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
+                                <?php $testimonials = $collection->load(); ?>
+                                <?php $i = 0;?>
+                                <?php if ($testimonials->count() > 0): ?>
+                                <?php   foreach ($testimonials as $testimonial): ?>
+                                    <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
+                                    <?php echo $testimonial->getTestimonialText(); ?>
+                                    <div class="right"></div>
+                                <?php   endforeach; ?>
+
+                                <?php endif;?>
+			</div>
+		</div>
+
+		<hr class="space" />
