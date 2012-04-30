@@ -1,0 +1,98 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php
+$pages = Mage::getModel('cms/page')->getCollection()->load();
+$for_brides = array();
+$consignors = array();
+$about = array();
+$measurement_info = array();
+
+foreach($pages as $page)
+{
+    $data = $page->getData();
+    if(preg_match("/for_brides\//", $data['identifier']))
+        $for_brides[] = $data;
+    if(preg_match("/consignors\//", $data['identifier']))
+        $consignors[] = $data;
+    if(preg_match("/about\//", $data['identifier']))
+        $about[] = $data;
+    if(preg_match("/measurement_info\//", $data['identifier']))
+        $measurement_info[] = $data;
+}
+?>
+
+<!-- BIG FOOTER -->
+		<div id="big_footer">
+			<div class="column">
+				<h5><?php echo $this->__("footer_1column_header");?></h5>
+				<ul>
+                                    <?php
+                                    foreach($for_brides as $value)
+                                        echo "<li><a href='".$this->getUrl($value['identifier'])."'>".$value['title']."</a></li>";
+                                    ?>
+				</ul>
+			</div>
+
+			<div class="column">
+				<h5><?php echo $this->__("footer_2column_header");?></h5>
+				<ul>
+                                    <?php
+                                    foreach($consignors as $value)
+                                        echo "<li><a href='".$this->getUrl($value['identifier'])."'>".$value['title']."</a></li>";
+                                    ?>
+				</ul>
+			</div>
+
+			<div class="column">
+				<h5><?php echo $this->__("footer_3column_header");?></h5>
+				<ul>
+                                    <?php
+                                    foreach($about as $value)
+                                        echo "<li><a href='".$this->getUrl($value['identifier'])."'>".$value['title']."</a></li>";
+                                    ?>
+				</ul>
+			</div>
+
+			<div class="column last">
+				<h5><?php echo $this->__("footer_4column_header");?></h5>
+				<ul>
+                                    <?php
+                                    foreach($measurement_info as $value)
+                                    {
+                                        echo "<li><a href='".$this->getUrl($value['identifier'])."'>".$value['title']."</a></li>";
+                                        if($value['identifier'] == "measurement_info/customer_service")
+                                        {
+                                            echo "<li><a href='".$this->getUrl("contacts")."'>Contact Us</a></li>";
+                                        }
+                                    }
+                                    ?>
+				</ul>
+			</div><br clear="both" />
+		</div>
+
+		<hr />

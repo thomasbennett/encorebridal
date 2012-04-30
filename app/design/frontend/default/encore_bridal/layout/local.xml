@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+      <reference name="head">
+          <action method="addCss"><stylesheet>css/style.css</stylesheet></action>
+          <action method="addCss"><stylesheet>css/screen.css</stylesheet></action>
+          <action method="addCss"><stylesheet>css/custom-theme/jquery-ui-1.8.16.custom.css</stylesheet></action>
+          <action method="addCss"><stylesheet>css/ENCORE.css</stylesheet></action>
+          <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
+          <action method="addItem"><type>skin_css</type><name>css/ie.css</name><params/><if>IE</if></action>
+      </reference>
+
+      <!-- Removals -->
+      <remove name="catalog.compare.sidebar" />
+      <remove name="right.permanent.callout" />
+      <remove name="left.permanent.callout" />
+      <remove name="left.newsletter" />
+      <remove name="right.reports.product.viewed" />
+      <remove name="paypal.partner.right.logo" />
+      <remove name="right.poll" />
+      <remove name="cart_sidebar" />
+      <remove name="catalog.compare.list" />
+
+      <reference name="header">
+          <action method="setTemplate">
+              <template>page/html/header.phtml</template>
+          </action>
+      </reference>
+
+      <reference name="footer">
+          <!-- Remove From CMS & Override -->
+          <action method="unsetChild"><name>footer_links</name></action>
+          <action method="setTemplate">
+              <template>page/html/footer.phtml</template>
+          </action>
+      </reference>
+  </default>
+
+  <catalog_category_default>
+    <reference name="root">
+        <action method="setTemplate">
+            <template>page/2columns-left.phtml</template>
+        </action>
+    </reference> 
+	
+    <reference name="product_list">
+        <action method="setColumnCount">
+            <columns>2</columns>
+        </action>
+    </reference>
+  </catalog_category_default>
+
+  <catalog_category_layered>
+    <reference name="left">
+    </reference>
+
+    <reference name="product_list">
+        <action method="setColumnCount">
+            <columns>2</columns>
+        </action>
+    </reference>
+</catalog_category_layered>
+
+<catalogsearch_result_index>
+    <reference name="root">
+        <action method="setTemplate">
+            <template>page/2columns-left.phtml</template>
+        </action>
+    </reference>
+
+    <reference name="left">
+      <block type="catalog/navigation" before="-" name="catalog.vertnav" template="catalog/navigation/vert_nav.phtml"/>
+    </reference>
+	
+    <reference name="product_list">
+      <action method="setColumnCount">
+          <columns>2</columns>
+      </action>
+    </reference>
+</catalogsearch_result_index>
+  
+</layout>
