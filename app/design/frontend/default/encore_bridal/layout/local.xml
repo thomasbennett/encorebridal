@@ -42,6 +42,10 @@
             <template>page/2columns-left.phtml</template>
         </action>
     </reference> 
+
+    <reference name="left">
+        <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
+    </reference>
 	
     <reference name="product_list">
         <action method="setColumnCount">
@@ -52,6 +56,7 @@
 
   <catalog_category_layered>
     <reference name="left">
+        <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
     </reference>
 
     <reference name="product_list">
@@ -69,7 +74,7 @@
     </reference>
 
     <reference name="left">
-      <block type="catalog/navigation" before="-" name="catalog.vertnav" template="catalog/navigation/vert_nav.phtml"/>
+        <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
     </reference>
 	
     <reference name="product_list">
