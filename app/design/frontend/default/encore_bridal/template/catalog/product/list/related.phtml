@@ -1,0 +1,76 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+//$_category  = Mage::getModel('catalog/layer')->getCurrentCategory();
+$_product = $this->getProduct();
+$_category = Mage::getModel('catalog/category');
+$_category->load($_product->getCategoryId());
+?>
+<?php if($this->getItems()->getSize()) { ?>
+
+<?php
+//echo $_category->getId();
+//$this->getItems()->addCategoryFilter(3);
+//$items = $this->getItems()->addAttributeToFilter('category_ids',array('finset'=>'3'));
+?>
+
+    <?php foreach($this->getItems() as $_item) { ?>
+    <?php
+    $product = Mage::getModel('catalog/product')->load($_item->getId());
+
+    $prod_categories = $product->getCategoryIds();
+    $prod_category = $prod_categories[0];
+    
+    if($prod_category != $_category->getid())
+            continue;
+
+    $prod_image = "";
+    foreach ($product->getMediaGalleryImages() as $image) {
+        $prod_image = $image->getUrl();
+        break;
+    }
+    if($prod_image == "")
+        $prod_image = $product->getImageUrl();
+    ?>
+
+    <div class="product_box">
+        <?php
+        /*echo "<pre>";print_r();echo"</pre>";
+        echo $product->getCategoryId();*/
+
+        ?>
+            <a href="<?php echo $_item->getProductUrl() ?>"><img src="<?php echo $prod_image; ?>" /></a>
+            <div class="product_details">
+                    <h3><a href="<?php echo $_item->getProductUrl() ?>">Lazaro #3908, Casual Dress Size <?php echo $_item->getData('size');?> - New</a></h3>
+                    Retail: <span class="retail">$<?php echo ((int)$_item->getPrice());?><sup>00</sup></span><br />
+                    <div class="eb_cost">EB Cost: $<?php echo ((int)$_item->getSpecialPrice());?><sup>00</sup></div>
+                    Save: $<?php echo ((int)$_item->getPrice() - (int)$_item->getSpecialPrice());?><sup>00</sup><br />
+                    <a href="<?php echo $_item->getProductUrl() ?>" class="more">More Information</a>
+            </div>
+    </div>
+    <?php } ?>
+<?php } ?>
