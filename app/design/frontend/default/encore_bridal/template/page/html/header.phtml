@@ -16,9 +16,13 @@
         </div>
 				<!--<a href="#" class="login">LOGIN</a> |
 				<a href="#">CART</a> |-->
-                                <?php echo $this->getChildHtml('topLinks') ?>
-				<a href="<?php echo $this->getUrl()."contacts";?>">CONTACT</a> |
-				<a href="#">310.545.1409</a>
+        <?php // echo $this->getChildHtml('topLinks') ?>
+        <div class="right" style="clear:right;">
+          <a href="http://demo.encorebridal.com/index.php/customer/account/login/" title="LOGIN" class="login">LOGIN</a> |
+          <a href="http://demo.encorebridal.com/index.php/checkout/cart/" title="CART">CART</a> |
+          <a href="http://demo.encorebridal.com/index.php/contacts">CONTACT</a> |
+          <a href="#">310.545.1409</a>
+        </div>
 			</div>
 			<!-- LOGO -->
 			<div id="logo"><a href="<?php echo $this->getUrl('') ?>"><img src="<?php echo $this->getSkinUrl('images/logo.png'); ?>" alt="Encore Bridal" /></a></div>
@@ -26,8 +30,8 @@
 			<div id="navigation">
 				<ul>
 					<li class="home"><a href="<?php echo $this->getUrl('') ?>">home</a></li>
-					<li class=""><a href="<?php echo $this->getUrl('')."dresses.html"?>">dresses</a></li>
-					<li class=""><a href="<?php echo $this->getUrl('')."accessories.html"?>">accessories</a></li>
+          <?php get_categories(); ?>
+					<li class="for_brides"><a href="<?php echo $this->getUrl('')."for-brides"?>">for brides</a></li>
 					<li class="consignors"><a href="<?php echo $this->getUrl('')."consignors"?>">consignors</a></li>
 					<li class="about"><a href="<?php echo $this->getUrl('')."about"?>">about</a></li>
 					<li class="blog"><a href="<?php echo $this->getUrl('')."blog"?>">blog</a></li>
@@ -56,7 +60,9 @@
                             $cat->load($id);
                             if($cat->getName() != "Root Catalog" && $cat->getName() != "Default Category")
                             {
+                              if($cat->getName() == 'dresses' || $cat->getName() == 'accessories'){
                                 echo "<li class='".strtolower($cat->getName())."'><a href='".$cat->getUrl()."'>".strtoupper($cat->getName())."</a></li>";
+                              }
                             }
                         }
                     }

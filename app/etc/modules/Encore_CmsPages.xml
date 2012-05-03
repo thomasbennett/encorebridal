@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+ <modules>
+  <Encore_CmsPages>
+   <codePool>local</codePool>
+   <active>true</active>
+  </Encore_CmsPages>
+ </modules>
+</config>

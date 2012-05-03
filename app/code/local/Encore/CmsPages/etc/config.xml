@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config>
+ <global>
+  <page>
+   <layouts>
+    <page_homepage_index translate="label">
+     <label>Homepage</label>
+     <template>page/homepage.phtml</template>
+     <layout_handle>page_homepage_index</layout_handle>
+    </page_homepage_index>
+   </layouts>
+  </page>
+ </global>
+</config>

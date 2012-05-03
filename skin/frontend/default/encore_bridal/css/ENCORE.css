@@ -1,5 +1,6 @@
 /* CSS DOCUMENT */
 /* ==== REDEFINE STYLES ======================================= */
+* { text-align: left; }
 html, html>body, body				{margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #5e5e5f;}
 a:link,
 a:visited,
@@ -79,6 +80,9 @@ font-weight: bold;
 	margin-top: 30px;
 }
 
+/* LAYOUT */
+#logo { margin-bottom: 10px; }
+
 /* FORM */
 label								{font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; font-weight: normal; text-transform: uppercase; color: #717174;}
 input[type=text],
@@ -87,13 +91,16 @@ input.text 							{background: url('../images/bg_input.jpg') left top no-repeat;
 input[type=text]:focus,
 input.text:focus					{border: none; outline: none;}
 input.submit,
-input[type=submit]					{background: #a09e9e; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 5px 10px !important; border: 4px double #FFF; cursor: pointer;}
+input[type=submit], button.btn-cart					{background: #a09e9e; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 2px 10px !important; border: 4px double #FFF; cursor: pointer;}
+.link-wishlist {background: #a09e9e; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 5px 10px !important; border: 4px double #FFF; cursor: pointer;}
+
 input.submit:hover,
 input[type=submit]:hover			{background: /*#fb4949;*/ black;}
 
 /* ==== LAYOUT STYLES ========================================= */
-#wrapper							{background: url('../images/bg_bottom.jpg') center top no-repeat; height: 100%;}
-#son_of_wrapper						{background: url('../images/bg_header.jpg') center top no-repeat; min-height: 670px; padding-top: 20px;}
+body							{background: url('../images/bg_bottom.jpg') center top no-repeat; height: 100%;}
+#wrapper						{background: url('../images/bg_header.jpg') center top no-repeat; min-height: 670px; padding-top: 20px;}
+.main-container, .main { background: none !important; }
 
 #top_nav							{font-size: 12px; color: #999; text-transform: uppercase; font-family: "proxima-nova", Arial, Helvetica, sans-serif; position: relative; top: -5px;}
 #top_nav a:link,
@@ -102,13 +109,13 @@ input[type=submit]:hover			{background: /*#fb4949;*/ black;}
 #top_nav a:hover					{color: #fb4949; text-decoration: underline;}
 #top_nav a.login 					{padding: 0 14px 0 0 !important;}
 #top_nav a:last-child				{padding-right: 0 !important;}
-#search								{margin-bottom: 5px; }
+#search								{margin-bottom: 5px; margin-top: 10px; float: right; width: 308px; }
 #search input[type=submit] {
 	margin-left: 6px;
 }
 /* NAVIGATION */
 #navigation							{font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; text-transform: uppercase; }
-#navigation ul 						{float: right;list-style: none; padding: 0; margin: 0;}
+#navigation ul 						{float: right;list-style: none; padding: 0; margin: 0; margin-top: 0;}
 #navigation ul li 					{float: left; height: 24px; margin-right: 38px;}
 #navigation ul li:last-child		{margin-right: 0;}
 #navigation ul li a:link,
@@ -122,12 +129,14 @@ body#for_brides #navigation ul li.for_brides,
 body#accessories #navigation ul li.accessories,
 body#dresses #navigation ul li.dresses,
 body#home #navigation ul li.home 	{border-bottom: 3px solid #fb4949;}
-body#blog #navigation ul li.blog a,
-body#about #navigation ul li.about a,
-body#consignors #navigation ul li.consignors a,
-body#for_brides #navigation ul li.for_brides a,
+body.blog #navigation ul li.blog a,
+body.cms-about #navigation ul li.about a,
+body.cms-consignors #navigation ul li.consignors a,
+body.cms-for_brides #navigation ul li.for_brides a,
 body#accessories #navigation ul li.accessories a,
 body#dresses #navigation ul li.dresses a,
+body.category-dresses #navigation ul li.dresses a,
+body.category-accessories #navigation ul li.accessories a,
 body#home #navigation ul li.home a 	{font-family: "federico-web"; color: #fb4949; text-transform: lowercase !important; padding: 0; margin: 0; line-height: 12px; font-size: 45px;}
 
 
@@ -173,7 +182,7 @@ a.less								{background: url('../images/arrow_gray_left.png') left center no-r
 a.less:hover,
 a.more:hover						{color: #000;}
 
-a.arrow 							{background: url('../images/arrow_gray_right.png') right center no-repeat; padding-right: 48px;}
+.arrow 							{background: url('../images/arrow_gray_right.png') right center no-repeat; padding-right: 48px;}
 
 .breadcrumbs						{color: #717174; text-transform: uppercase; font-family: "droid-serif", Georgia, "Times New Roman", Times, serif; font-size: 10px; font-weight: normal; letter-spacing: .1em; padding-bottom: 10px; margin: 0;}
 .breadcrumbs a:link,
@@ -209,8 +218,8 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 .small_box_2 h5						{padding-bottom: 0;}
 
 #heading_new_products				{top: -30px; margin-bottom: -25px;}
-.product_box						{background: url('../images/bg_gray_box.jpg') left top repeat; width: 299px; height: auto; border: 1px solid #dfdfdf; padding: 3px;}
-.product_details					{width: 299px; border: 1px solid #dfdfdf; margin: 0px 0; height: 46px; width: 276px; padding: 10px;}
+.products-grid .item						{background: url('../images/bg_gray_box.jpg') left top repeat; width: 299px; height: auto; border: 1px solid #dfdfdf; padding: 3px;}
+.product_details					{ border: 1px solid #dfdfdf; padding: 10px;height:160px;}
 
 
 /* DRESSES */
@@ -240,15 +249,16 @@ body#dresses .product_details a.more {margin-top: 7px; display: inline-block;}
 .product_box h3 a:active			{color: #717174;}
 .product_box h3 a:hover				{color: #fb4949;}
 
-#quick_search_wrapper				{background: url('../images/bg_search_top.gif') left top no-repeat; width: 228px; padding-top: 16px; margin-top: 10px;}
-#quick_search 						{background: #bee3e9 url('../images/bg_search_bottom.gif') left bottom no-repeat; padding: 0 20px 18px 20px; font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; font-weight: normal; text-transform: uppercase; color: #717174}
-#quick_search h4 					{font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; color: #4a4a4a; font-weight: bold; font-size: 18px; padding: 5px 0 0 0; margin: 0;}
-#quick_search hr 					{height: 2px; background: #FFF; border-bottom: 1px solid #afd0d7;}
-#quick_search input[type=submit]	{}
-#submit_quick_search 				{width: 100%; background: #788f93; margin-bottom: 10px;}
-#submit_quick_search:hover			{background: #fb4949;}
-#quick_search .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, #quick_search .ui-widget-content	{border: 1px solid #AAA; border-radius: 3px !important;}
+.block-layered-nav				{background: url('../images/bg_search_top.gif') left top no-repeat; width: 228px; padding-top: 16px; margin-top: 10px;}
+.block-layered-nav .block-content	{background: #bee3e9 url('../images/bg_search_bottom.gif') left bottom no-repeat; font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; font-weight: normal; text-transform: uppercase; color: #717174}
+.block-layered-nav h4 					{font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; color: #4a4a4a; font-weight: bold; font-size: 18px; padding: 5px 0 0 0; margin: 0;}
+.block-layered-nav hr 					{height: 2px; background: #FFF; border-bottom: 1px solid #afd0d7;}
+.block-layered-nav input[type=submit]	{}
+/*#quick_search .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, #quick_search .ui-widget-content	{border: 1px solid #AAA; border-radius: 3px !important;}*/
 
+.m-filter-slider { background: #E7E7E7 !important; border: 1px solid #aaa; border-radius: 3px; height: 10px !important; margin-top: 5px;}
+.m-filter-slider > .m-slider-span  { border-bottom: 0 !important; }
+#price-from, #price-to { margin-top: -3px !important; }
 
 /* PRODUCT DETAIL */
 .large_product						{margin-bottom: 10px;}
@@ -263,7 +273,7 @@ body#dresses .product_details a.more {margin-top: 7px; display: inline-block;}
 .large_eb_cost						{color: #fb4949; font-weight: bold;}
 .large_savings						{font-weight: bold; margin-bottom: 15px;}
 
-input.add_to_cart					{background: #fb4949;}
+input.add_to_cart, .btn-cart					{background: #fb4949 !important;}
 input.add_to_cart:hover				{background: #000;}
 
 #finish_the_look					{margin-top: 10px;}
@@ -291,12 +301,13 @@ a.finish_the_look img 				{width: 103px; height: auto;}
 .ui-tabs .ui-tabs-nav 			{padding-left: 0; padding-top: 0; padding-right: 0;}
 /* active tab */
 .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {color: #717174; font-size: 11px; text-transform: uppercase; font-family: "proxima-nova", Arial, Helvetica; font-weight: bold; padding: 10px 22px;}
-#more_tabs .ui-tabs-nav li a, #more_tabs .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a, #more_tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, #more_tabs .ui-tabs-nav li.ui-state-disabled a, #more_tabs .ui-tabs-nav li.ui-state-processing a {color: #717174; font-size: 12px; text-transform: uppercase; font-family: "proxima-nova", Arial, Helvetica; font-weight: bold; padding: 10px 93px;}
+#more_tabs .ui-tabs-nav li a, #more_tabs .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a, #more_tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, #more_tabs .ui-tabs-nav li.ui-state-disabled a, #more_tabs .ui-tabs-nav li.ui-state-processing a {color: #717174; font-size: 12px; text-transform: uppercase; font-family: "proxima-nova", Arial, Helvetica; font-weight: bold; padding: 10px 32px;}
+#more_tabs { width: 60%;}
 
 #more_tabs .product_box 		{float: left; margin-right: 3px; height: 475px !important; margin-top: 5px; margin-bottom: 5px;}
 #more_tabs .product_box:last-child {margin-right: 0;}
 #more_tabs .product_details  	{height: 113px !important;}
-#more_tabs .ui-tabs-panel {padding: 0 0 0 3px !important;}
+#more_tabs .ui-tabs-panel {padding: 0 0 0 3px !important; min-height: 256px; }
 #more_tabs .product_box>a               {display: block; text-align: center;}
 
 

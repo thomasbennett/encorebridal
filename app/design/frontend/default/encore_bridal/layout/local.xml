@@ -8,6 +8,9 @@
           <action method="addCss"><stylesheet>css/ENCORE.css</stylesheet></action>
           <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
           <action method="addItem"><type>skin_css</type><name>css/ie.css</name><params/><if>IE</if></action>
+          <action method="addJs"><script>jquery/jquery.js</script></action>
+          <action method="addJs"><script>jquery/jquery-ui-1.8.16.custom.min.js</script></action>
+          <action method="addJs"><script>jquery/encore.js</script></action>
       </reference>
 
       <!-- Removals -->
@@ -34,24 +37,31 @@
               <template>page/html/footer.phtml</template>
           </action>
       </reference>
+
+      <reference name="root">
+          <block type="page/html" name="copyright" as="copyright" template="page/html/copyright.phtml"/>
+      </reference>
   </default>
+
 
   <catalog_category_default>
     <reference name="root">
         <action method="setTemplate">
             <template>page/2columns-left.phtml</template>
         </action>
+        <block type="page/html" name="copyright" as="copyright" template="page/html/copyright.phtml"/>
     </reference> 
 
     <reference name="left">
         <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
     </reference>
-	
-    <reference name="product_list">
-        <action method="setColumnCount">
-            <columns>2</columns>
-        </action>
+
+    <reference name="content">
+      <block type="catalog/product_view" name="product.info" template="catalog/product/view.phtml">
+        <block type="catalog/product_list_related" name="catalog.product.related" as="related" template="catalog/product/list/related.phtml"/>
+      </block>
     </reference>
+
   </catalog_category_default>
 
   <catalog_category_layered>
@@ -59,10 +69,8 @@
         <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
     </reference>
 
-    <reference name="product_list">
-        <action method="setColumnCount">
-            <columns>2</columns>
-        </action>
+    <reference name="root">
+        <block type="page/html" name="copyright" as="copyright" template="page/html/copyright.phtml"/>
     </reference>
 </catalog_category_layered>
 
@@ -71,17 +79,32 @@
         <action method="setTemplate">
             <template>page/2columns-left.phtml</template>
         </action>
+        <block type="page/html" name="copyright" as="copyright" template="page/html/copyright.phtml"/>
     </reference>
 
     <reference name="left">
         <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
     </reference>
-	
-    <reference name="product_list">
-      <action method="setColumnCount">
-          <columns>2</columns>
-      </action>
-    </reference>
 </catalogsearch_result_index>
-  
+
+<catalog_product_view>
+  <reference name="root">
+    <action method="setTemplate">
+      <template>page/1column.phtml</template>
+    </action>
+  </reference>
+</catalog_product_view>
+
+<page_homepage_index>
+  <reference name="root">
+    <block type="page/html" name="slider" as="slider" template="page/html/slider.phtml"/>
+    <block type="page/html" name="boxes" as="boxes" template="page/html/boxes.phtml"/>
+    <block type="page/html" name="newproducts" as="newproducts" template="page/html/newproducts.phtml"/>
+    <block type="page/html" name="featuredon" as="featuredon" template="page/html/featuredon.phtml"/>
+    <block type="page/html" name="blog" as="blog" template="aw_blog/blog.phtml"/>
+    <block type="page/html" name="post" as="post" template="aw_blog/post.phtml"/>
+    <block type="page/html" name="copyright" as="copyright" template="page/html/copyright.phtml"/>
+  </reference>
+</page_homepage_index>
+
 </layout>
