@@ -89,7 +89,7 @@ ul,ol         { list-style:none; }
 
 /* Layout ================================================================================ */
 .wrapper {}
-.page { width:950px; margin:0 auto; padding:10px 0; text-align:left; }
+.page { width:950px; margin:0 auto; padding:0; text-align:left; }
 .page-print { background:#fff; padding:20px; text-align:left; }
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { padding:20px; text-align:left; }

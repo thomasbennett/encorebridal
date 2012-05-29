@@ -1,0 +1,87 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php
+    $cart = Mage::helper('checkout/cart')->getCart();
+    $_helper = $this->helper('catalog/output');
+    $_upsell_products = array();
+    $_upsell_products_ids = array();
+?>
+
+<?php if($cart->getItemsCount()): ?>
+    <?php foreach ($cart->getProductIds() as $id):?>
+        <?php
+            $_product = Mage::getModel('catalog/product')->load($id);
+
+            $upsell_collection =  $_product->getUpSellProductCollection();
+            foreach($upsell_collection as $upsell_product) {
+                if(!in_array($upsell_product->getId(), $_upsell_products_ids)) {
+                    $_upsell_products_ids[] = $upsell_product->getId();
+                    $_upsell_products[] = Mage::getModel('catalog/product')->load($upsell_product->getId());
+                }
+            } 
+        ?>
+    <?php endforeach; ?>
+<?php endif ?>
+
+<?php if(count($_upsell_products_ids) != 0) { ?> 
+    <h2><?php echo $this->__('You may also be interested in the following product(s)') ?></h2>
+    <ul id="upsell-products-list">
+
+    <?php foreach($_upsell_products as $_product) { ?>
+
+        <li class="item">
+            <div class="product-details">
+            <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>"><?php echo $_product->getName() ?></a></h3>
+            <a href="<?php echo $_product->getProductUrl() ?>">
+            <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()) { ?>
+            <?php
+                    $_img = '<img class="upsell_image" src="'.$this->helper('catalog/image')->init($_product, 'image').'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'"/>';
+                    echo $_helper->productAttribute($_product, $_img, 'image');
+                ?>
+            <?php } else {?>
+            <?php
+                    $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(265).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+                    echo $_helper->productAttribute($_product, $_img, 'image');
+                ?>
+            <?php } ?>
+            </a>
+            
+            <div class="large_retail">Retail: <span class="retail">$<?php echo ((int)$_product->getPrice());?><sup>00</sup></span></div>
+            <?php if((int)$_product->getSpecialPrice() != 0) { ?>
+            <div class="large_eb_cost">EB Cost: $<?php echo ((int)$_product->getSpecialPrice());?><sup>00</sup></div>
+            <div class="large_savings">Save: $<?php echo ((int)$_product->getPrice() - (int)$_product->getSpecialPrice());?><sup>00</sup></div>
+            <?php } else { ?>
+            <div class="large_eb_cost">Encore Bridal Cost: $<?php echo ((int)$_product->getPrice());?><sup>00</sup></div>
+            <div class="large_savings">Save: $0<sup>00</sup></div>
+            <?php } ?>
+
+            </div>
+        </li>
+    <?php }?>
+    </ul>
+<?php } ?>
