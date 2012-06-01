@@ -20,6 +20,7 @@ hr.one_dotted_hr                                                {height: 4px;}
 hr 									{background: url('../images/hr_dotted.png') left top repeat-x; height: 12px; border: none; padding: 0; margin: 20px 0;}
 hr.space							{background: none; height: 10px; margin: 0;}
 
+small { font-size: 85% }
 ul,ol {
 list-style-type: none;
 margin: 0px;
@@ -109,10 +110,11 @@ body							{background: url('../images/bg_bottom.jpg') center top no-repeat; hei
 #top_nav a:hover					{color: #fb4949; text-decoration: underline;}
 #top_nav a.login 					{padding: 0 14px 0 0 !important;}
 #top_nav a:last-child				{padding-right: 0 !important;}
-#search								{margin-bottom: 5px; margin-top: 10px; float: right; width: 308px; }
-#search input[type=submit] {
-	margin-left: 6px;
-}
+#search								{margin-bottom: 5px; margin-top: 10px; float: right; width: 320px; }
+#search input[type=submit] { margin-left: 6px; }
+
+header > #top_nav > div.right { margin-right: 14px; }
+
 /* NAVIGATION */
 #navigation							{font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; float: right; margin-top: 91px; text-transform: uppercase; }
 #navigation ul 						{float: right;list-style: none; padding: 0; margin: 0; margin-top: 0;}
