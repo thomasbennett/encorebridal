@@ -146,8 +146,8 @@ input.qty { width:2.5em !important; }
 button.button::-moz-focus-inner { padding:0; border:0; } /* FF Fix */
 button.button { -webkit-border-fit:lines; } /* <- Safari & Google Chrome Fix */
 button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; background:transparent; cursor:pointer; }
-button.button span { float:left; height:21px; background:transparent url(../images/bkg_button.gif) 0 0 no-repeat; padding:0; font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
-button.button span span { background-position:100% 0; padding:0 19px 0 0px; }
+button.button span { height:21px; padding:0; font:bold 12px/21px Arial, Helvetica, sans-serif; text-align:center; white-space:nowrap; color:#fff; }
+button.button span span { background-position:100% 0; }
 button.disabled {}
 button.disabled span {}
 
@@ -174,11 +174,11 @@ p.control input.radio { margin-right:6px; }
 /*.form-list li.fields { margin-right:-15px; }*/
 .form-list .input-box { display:block; clear:both; width:260px; }
 .form-list .field { float:left; width:275px; }
-.form-list input.input-text { width:254px; }
+.form-list input.input-text { width:238px; }
 .form-list textarea { width:254px; height:10em; }
 .form-list select { width:260px; }
 .form-list li.wide .input-box { width:535px; }
-.form-list li.wide input.input-text { width:529px; }
+.form-list li.wide input.input-text { width:514px; }
 .form-list li.wide textarea { width:529px; }
 .form-list li.wide select { width:535px; }
 .form-list li.additional-row { border-top:1px solid #ccc; margin-top:10px; padding-top:7px; }
@@ -254,7 +254,7 @@ p.control input.radio { margin-right:6px; }
 .buttons-set-order {}
 
 .fieldset { background:#fefefe; padding:22px 25px 12px 33px; margin:28px 0; }
-.fieldset .legend { float:left; font-weight:bold; font-size:13px; border:1px solid #fefefe; background:#dedede; color:#333; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
+.fieldset .legend { float:left; font-weight:bold; font-size:34px; color:#333; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
 
 /* Form Validation */
 .validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:17px; font-size:10px; line-height:13px; background:url(../images/validation_advice_bg.gif) 2px 1px no-repeat; color:#f00; }
@@ -766,7 +766,7 @@ dl, dt { font-weight: normal !important; }
 /* Add to Cart */
 .add-to-cart label { float:left; margin-right:5px; }
 .add-to-cart .qty { float:left; }
-.add-to-cart button.button { float:left; margin-left:5px; text-transform: uppercase; }
+.add-to-cart button.button { float:left; margin-left:5px; text-transform: uppercase; margin-right: 15px; }
 .add-to-cart .paypal-logo { clear:left; text-align:right; }
 .add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 60px 5px 0; }
 .product-view .add-to-cart .paypal-logo { margin:0; }
@@ -775,7 +775,7 @@ dl, dt { font-weight: normal !important; }
 .add-to-box {}
 .add-to-box .add-to-cart { float:left; }
 .add-to-box .or { float:left; margin:0 10px; }
-.add-to-box .add-to-links { float:left; margin-top: 10px; }
+.add-to-box .add-to-links { float:left; margin-top: 10px !important; }
 .add-to-box .add-to-links .link-compare {display: none; }
 
 
@@ -914,7 +914,7 @@ dl, dt { font-weight: normal !important; }
 
 /* Shopping Cart Collateral boxes */
 .cart .cart-collaterals { padding:25px 0 0; }
-.cart .cart-collaterals .col2-set { float:left; width:700px; }
+.cart .cart-collaterals .col2-set { float:left; width:600px; }
 
 .cart .crosssell {}
 .cart .crosssell h2 { font-size:13px; font-weight:bold; }
@@ -924,13 +924,13 @@ dl, dt { font-weight: normal !important; }
 
 /* Discount Codes & Estimate Shipping and Tax Boxes */
 .cart .discount,
-.cart .shipping {}
+.cart .shipping { width: 390px; }
 
 /* Shopping Cart Totals */
 .cart .totals { float:right; }
 .cart .totals table { width:100%; }
 .cart .totals table th,
-.cart .totals table td { padding:5px; }
+.cart .totals table td { padding: 0 25px; }
 .cart .totals table th { font-weight:bold; }
 .cart .totals table tfoot th {}
 
@@ -1026,9 +1026,9 @@ dl, dt { font-weight: normal !important; }
 .opc .buttons-set.disabled button.button { display:none; }
 .opc .buttons-set .please-wait { height:21px; line-height:21px; }
 
-.opc .step-title { background-color:#f6f6f6; padding:0 5px; text-align:right; }
-.opc .step-title .number { float:left; line-height:22px; margin-right:5px; }
-.opc .step-title h2 { float:left; }
+.opc .step-title { background-color:#f6f6f6; text-align:right; }
+.opc .step-title .number { border: 1px solid #999; float:left; line-height:22px; margin-right:5px; }
+.opc .step-title h2 { float:left; line-height: 1.8; }
 .opc .step-title a { display:none; float:right; }
 
 .opc .allow .step-title { cursor:pointer; }

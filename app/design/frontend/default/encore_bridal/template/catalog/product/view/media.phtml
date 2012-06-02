@@ -64,15 +64,20 @@
     ?>
 </p>
 <?php endif; ?>
+
+<?php // popup code --> 
+/*onclick="popWin('<?php echo $this->getGalleryUrl($_image) ?>', 'gallery', 'width=300,height=300,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;" */ ?>
+
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
     <h2><?php echo $this->__('More Views') ?></h2>
     <ul>
     <?php foreach ($this->getGalleryImages() as $_image): ?>
         <li>
-            <a href="#" onclick="popWin('<?php echo $this->getGalleryUrl($_image) ?>', 'gallery', 'width=300,height=300,left=0,top=0,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56); ?>" width="56" height="56" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
+            <a href="#" class="product-small-preview" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56); ?>" width="56" height="56" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
         </li>
     <?php endforeach; ?>
+
     </ul>
 </div>
 <?php endif; ?>
@@ -81,7 +86,16 @@
   jQuery(function($){
     $(window).load(function(){
       var imgHt = $('.product-image-zoom').find('img').height();
-      $('.product-img-box, .product-image-zoom').css({'height':imgHt+'px'});
+      var imgViews = $('.more-views').find('ul').height();
+      $('.product-image-zoom').css({'height':imgHt+'px'});
+      $('.product-img-box').css({'height':imgViews+imgHt+'px'});
+    });
+
+    $('.product-small-preview').click(function(){
+      var newImg = '<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'base_image', $_image->getFile())->resize(); ?>" style="width:331px;" />'; 
+      //$('.product-image-zoom').html(newImg);
+
+      return false;
     });
   });
 </script>

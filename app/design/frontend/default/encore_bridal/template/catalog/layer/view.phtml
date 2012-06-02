@@ -45,9 +45,9 @@
             <p class="block-subtitle"><?php echo $this->__('Quick Search') ?></p>
 
             <hr>
-            <a href="#" class="more">New Arrivals</a><br />
-            <a href="#" class="more">Recently Sold</a><br />
-            <a href="#" class="more">Last Chance</a>
+            <a href="/new-arrivals" class="more">New Arrivals</a><br />
+            <a href="/dresses-1000" class="more">$1,000 or Less</a><br />
+            <a href="/recently-sold" class="more">Recently Sold</a>
             <hr>
 
             <dl id="narrow-by-list">
@@ -63,4 +63,10 @@
         <?php endif; ?>
     </div>
 </div>
+
+<script>
+  (function($){
+    $('.m-more-less').parent().addClass('relative');
+  })(jQuery);
+</script>
 <?php endif; ?>

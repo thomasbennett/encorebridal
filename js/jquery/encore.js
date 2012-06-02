@@ -102,7 +102,7 @@ $j(document).ready(function() {
 });
 
 jQuery(function($){
-  $('#price-track').parent().after('<a href="#" class="more" id="refine_search">Refine Search</a>');
+  $('#price-track').parent().after('<a href="#" class="more" id="refine_search">Refine Search</a><hr />');
   $('#refine_search').nextAll().wrapAll('<div class="hide" id="refine_items"></div>');
 
   $('#refine_search').click(function(){

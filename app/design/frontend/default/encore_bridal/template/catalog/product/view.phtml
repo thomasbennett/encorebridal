@@ -227,14 +227,24 @@
         <br clear="both" />
 
 			</div>
-			<div id="more_tabs-2"><?php echo $_product->getData('returnpolicy');?></div>
-			<div id="more_tabs-3"><?php echo $_product->getData('freeguarantee');?></div>
+			<div id="more_tabs-2"><span><?php echo $_product->getData('returnpolicy');?></span></div>
+			<div id="more_tabs-3"><span><?php echo $_product->getData('freeguarantee');?></span></div>
 
 		</div>
 
     <div id="testimonial_box" class="right">
-      <h3><?php echo $this->__('Short Description') ?></h3>
-      <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+      <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
+      <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
+      <?php $testimonials = $collection->load(); ?>
+      <?php $i = 0;?>
+      <?php if ($testimonials->count() > 0): ?>
+      <?php foreach ($testimonials as $testimonial): ?>
+        <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
+        <?php echo $testimonial->getTestimonialText(); ?>
+        <div class="right"></div>
+      <?php endforeach; ?>
+
+      <?php endif;?>
     </div>
 
     <div class="clearer"></div>
