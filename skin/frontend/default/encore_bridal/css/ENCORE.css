@@ -466,3 +466,7 @@ QUICK SEARCH layered NAVIGATION
 .currently .actions { border: 1px solid #fff; padding: 3px 7px 2px; margin-bottom: 20px; width: 69px; }
 .currently .actions a { color: #fff; text-decoration: none;  }
 .m-expandable-filter { margin-top: 5px; }
+
+/* ZOOM */
+.cloud-zoom-gallery {float:left;display:inline-block;border:2px solid #eee;height:60px;width:60px;margin-right:5px;}
+.eb-badge { margin-right: 15px;}

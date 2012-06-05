@@ -1,0 +1,66 @@
+<?php
+    $_product = $this->getProduct();
+    $_lightboxConfig = Mage::getStoreConfig('Zoomcloud/general');
+    /* Main Image Size */
+    if ($_lightboxConfig['mainImagehei'] && $_lightboxConfig['mainImagewid']) 
+	{
+        $mainImageSize = array($_lightboxConfig['mainImagehei'],$_lightboxConfig['mainImagewid']);
+    } 
+	else 
+	{
+        $mainImageSize = array(265, 265);
+    }
+
+    /* Additional Images Size */
+    if ($_lightboxConfig['additionalImagehei'] && $_lightboxConfig['additionalImagewid']) 
+	{
+        $additionalImageSize = array($_lightboxConfig['additionalImagehei'],$_lightboxConfig['additionalImagewid']);
+    } 
+	else 
+	{
+        $additionalImageSize = array(60, 60);
+    }
+    
+    $image = $this->helper('catalog/image')->init($_product, 'image');
+ 
+       
+?>
+
+<?php
+	$maintitle = $this->htmlEscape($_product->getImageLabel());
+	if(($_lightboxConfig['productName'] != 0) && empty($maintitle)):
+	        $maintitle  = $_product->getName();
+	endif;
+?>
+
+<div class="zoom-section">  
+<div class="zoom-small-image"><a class = 'cloud-zoom' id='zoom1' href='<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>'  rel="adjustX: 10, adjustY:-4"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt='' title="<?php echo $this->htmlEscape($_product->getImageLabel());?>" /></a></div>  	  	
+
+</div>
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+ <div class="zoom-desc">
+ <p>
+ <a href='<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>' class='cloud-zoom-gallery' title='Red' rel="useZoom: 'zoom1', smallImage: '<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>' ">
+ <img class="zoom-tiny-image" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail')->resize($additionalImageSize[0], $additionalImageSize[1]); ?>" alt = "<?php echo $subtitle; ?>"/>
+    <?php $i=1; foreach ($this->getGalleryImages() as $_image): ?>
+	<?php
+	
+	$subtitle = $this->htmlEscape($_image->getLabel());
+	if(($_lightboxConfig['productName'] != 0) && empty($subtitle)):
+	        $subtitle  = $_product->getName();
+	endif;
+	?>
+	
+	<a href='<?php echo $this->helper('catalog/image')->init($_product, 'image',$_image->getFile()); ?>' class='cloud-zoom-gallery' title='Red' rel="useZoom: 'zoom1', smallImage: '<?php echo $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize($mainImageSize[0], $mainImageSize[1]); ?>' ">
+	
+	<img class="zoom-tiny-image" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($additionalImageSize[0], $additionalImageSize[1]); ?>" alt = "<?php echo $subtitle; ?>"/>
+	
+</a>
+	
+	
+    <?php $i++; endforeach; ?>
+	</p>
+  </div>
+</div>
+<?php endif; ?>

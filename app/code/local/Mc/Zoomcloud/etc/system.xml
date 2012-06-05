@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <magentoconnect translate="label">
+            <label>Infyways Store</label>
+            <sort_order>400</sort_order>
+        </magentoconnect>
+    </tabs>
+    <sections>
+        <Zoomcloud translate="label" module="Zoomcloud">
+			<class>separator-top</class>
+            <label>Cloud Zoom</label>
+            <tab>magentoconnect</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>303</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Cloud Zoom</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+						<jquery translate="label">
+                            <label>Enable Jquery</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jquery>
+                        <mainImagehei translate="label comment">
+                            <label>Large Image Height</label>
+                            <comment>Height of the main image(Default 265px). </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainImagehei>
+						<mainImagewid translate="label comment">
+                            <label>Large Image Width</label>
+                            <comment>Width of the main image(Default 265px). </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mainImagewid>
+                        <additionalImagehei translate="label comment">
+                            <label>Thumb Image Height</label>
+                            <comment>Height of the small images(Default 60px)</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additionalImagehei>
+						<additionalImagewid translate="label comment">
+                            <label>Thumb Image Width</label>
+                            <comment>Width of the small images(Default 60px)</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </additionalImagewid>
+                    </fields>
+                </general>
+            </groups>
+        </Zoomcloud>
+    </sections>
+</config>
