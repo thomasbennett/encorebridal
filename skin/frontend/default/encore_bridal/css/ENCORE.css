@@ -20,6 +20,7 @@ hr.one_dotted_hr                                                {height: 4px;}
 hr 									{background: url('../images/hr_dotted.png') left top repeat-x; height: 12px; border: none; padding: 0; margin: 20px 0;}
 hr.space							{background: none; height: 10px; margin: 0;}
 
+small { font-size: 85% }
 ul,ol {
 list-style-type: none;
 margin: 0px;
@@ -33,6 +34,7 @@ thead th {
 caption, th, td {
 	font-size: 13px;
 }
+.relative { position: relative; }
 .col2-set:after {
 	content: ".";
 	display: block;
@@ -75,10 +77,13 @@ font-weight: bold;
 .page-title ul.checkout-types {
 	display: block;
 	float: right;
+  margin-top: 40px;
 }
 #big_footer {
 	margin-top: 30px;
 }
+
+.highlight { background: #ecffee !important }
 
 /* LAYOUT */
 #logo { margin-bottom: 10px; }
@@ -109,14 +114,15 @@ body							{background: url('../images/bg_bottom.jpg') center top no-repeat; hei
 #top_nav a:hover					{color: #fb4949; text-decoration: underline;}
 #top_nav a.login 					{padding: 0 14px 0 0 !important;}
 #top_nav a:last-child				{padding-right: 0 !important;}
-#search								{margin-bottom: 5px; margin-top: 10px; float: right; width: 308px; }
-#search input[type=submit] {
-	margin-left: 6px;
-}
+#search								{margin-bottom: 5px; margin-top: 10px; float: right; width: 320px; }
+#search input[type=submit] { margin-left: 6px; }
+
+#top_nav > div.right { margin-right: 14px; }
+
 /* NAVIGATION */
-#navigation							{font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; text-transform: uppercase; }
+#navigation							{font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; float: right; margin-top: 91px; text-transform: uppercase; }
 #navigation ul 						{float: right;list-style: none; padding: 0; margin: 0; margin-top: 0;}
-#navigation ul li 					{float: left; height: 24px; margin-right: 38px;}
+#navigation ul li 					{float: left; height: 24px; margin-right: 35px;}
 #navigation ul li:last-child		{margin-right: 0;}
 #navigation ul li a:link,
 #navigation ul li a:visited,
@@ -129,6 +135,7 @@ body#for_brides #navigation ul li.for_brides,
 body#accessories #navigation ul li.accessories,
 body#dresses #navigation ul li.dresses,
 body#home #navigation ul li.home 	{border-bottom: 3px solid #fb4949;}
+#home .product_details { border: 0; height: auto; }
 body.blog #navigation ul li.blog a,
 body.cms-about #navigation ul li.about a,
 body.cms-consignors #navigation ul li.consignors a,
@@ -138,7 +145,22 @@ body#dresses #navigation ul li.dresses a,
 body.category-dresses #navigation ul li.dresses a,
 body.category-accessories #navigation ul li.accessories a,
 body#home #navigation ul li.home a 	{font-family: "federico-web"; color: #fb4949; text-transform: lowercase !important; padding: 0; margin: 0; line-height: 12px; font-size: 45px;}
-
+#checkout .page-title { margin-top: 0; }
+#checkout .page-title h1 { line-height: 2em; }
+.my-wishlist .buttons-set button, 
+.buttons-set button,
+#checkout button, 
+.wishlist-index-share button, 
+.customer-address-form button {background: #fb4949; border: 4px double #fff !important;  padding-left: 5px; border: 1px solid #999;}
+.buttons-set button,
+#checkout button,
+.wishlist-index-share button, 
+.my-wishlist .buttons-set button { padding-right: 5px; } 
+.sales-order-view .box,
+.customer-account-index .box { background: transparent; }
+.sales-order-view h1, 
+.wishlist-index-share .page-title h1,
+.customer-account-index .page-title h1 { line-height: 1.4 }
 
 /* BIG FOOTER */
 #big_footer							{color: #888; font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; background: #bebfbf;}
@@ -273,7 +295,7 @@ body#dresses .product_details a.more {margin-top: 7px; display: inline-block;}
 .large_eb_cost						{color: #fb4949; font-weight: bold;}
 .large_savings						{font-weight: bold; margin-bottom: 15px;}
 
-input.add_to_cart, .btn-cart					{background: #fb4949 !important;}
+input.add_to_cart, .btn-cart, .currently .actions					{background: #fb4949 !important;}
 input.add_to_cart:hover				{background: #000;}
 
 #finish_the_look					{margin-top: 10px;}
@@ -309,7 +331,7 @@ a.finish_the_look img 				{width: 103px; height: auto;}
 #more_tabs .product_details  	{height: 113px !important;}
 #more_tabs .ui-tabs-panel {padding: 0 0 0 3px !important; min-height: 256px; }
 #more_tabs .product_box>a               {display: block; text-align: center;}
-
+#more_tabs span, #more_tabs-1 span, #more_tabs-2 span, #more_tabs-3 span { padding: 10px 10px 0; display: block;}
 
 .postWrapper {
 	padding: 30px 0px;
@@ -352,11 +374,11 @@ h2.product-name     {font-family: "proxima-nova", Arial, Helvetica; color: #666;
 .cart-collaterals .col-2 {width: 100%;}
 .cart-collaterals .col-2 h2 {text-transform: uppercase}
 
-#discount-coupon-form #coupon_code  {width: 390px; border: 1px solid #BBBBBB; background: white; height: 21px; font-family: Arial, Helvetica, sans-serif; padding: 5px 10px; font-size: 14px; color: #999;}
+#discount-coupon-form #coupon_code  {border: 1px solid #BBBBBB; background: white; height: 21px; font-family: Arial, Helvetica, sans-serif; padding: 5px 10px; font-size: 14px; color: #999;}
 
-.shipping-form #postcode   {width: 390px; border: 1px solid #BBBBBB; background: white}
+.shipping-form #postcode   {border: 1px solid #BBBBBB; background: white}
 
-.cart .page-title {height: 137px;}
+.cart .page-title {height: 75px;}
 .cart button {background: #fb4949; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 5px 10px !important; border: 4px double #FFF; cursor: pointer; text-transform: uppercase;}
 .cart button:hover {background: black;}
 .cart .button_gray {background: #A09E9E; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 5px 10px !important; border: 4px double #FFF; cursor: pointer; text-transform: uppercase;}
@@ -398,7 +420,7 @@ BLOG
 CONTACT FORM
 */
 
-#contactForm {margin-left: 320px; width: 415px; float: left; margin-bottom: 25px;}
+#contactForm {width: 608px; float: left; margin-bottom: 25px;}
 #contactForm input[type=text] {width: 380px; border: 1px solid #BBBBBB; background: white}
 #contactForm button {background: #fb4949; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 5px 10px !important; border: 4px double #FFF; cursor: pointer; text-transform: uppercase;}
 #contactForm button:hover {background: black;}
@@ -427,3 +449,24 @@ PAGINATION
 #upsell-products-list li .large_retail {text-align:left; padding-left:15px;}
 #upsell-products-list li .large_eb_cost {text-align:left; padding-left:15px;}
 #upsell-products-list li .large_savings {text-align:left; padding-left:15px;}
+
+.block .block-subtitle { font-size: 16px; text-align: center; }
+
+/* 
+QUICK SEARCH layered NAVIGATION
+*/
+.m-show-less-action { background: url('../images/down-arrow.png') top right no-repeat; display: block; float: right; height: 11px; text-indent: -999em; width: 200px; }
+.m-show-more-action { background: url('../images/side-arrow.png') top right no-repeat; display: block; float: right; height: 17px; text-indent: -999em; width: 200px; }
+.m-more-less { font-size: 11px; position: absolute; right: 3px; top: -22px; opacity: .5; filter: alpha(opacity=50); }
+.m-filter-item-list li { margin-left: 10px; }
+.m-filter-item-list li a { text-decoration: none; }
+.m-selected-filter-item { background: #d0f8ff; padding: 2px; margin-bottom: 2px; display:inline-block; }
+.currently li { margin-bottom: 5px; }
+.currently li span.label { display: block; }
+.currently .actions { border: 1px solid #fff; padding: 3px 7px 2px; margin-bottom: 20px; width: 69px; }
+.currently .actions a { color: #fff; text-decoration: none;  }
+.m-expandable-filter { margin-top: 5px; }
+
+/* ZOOM */
+.cloud-zoom-gallery {float:left;display:inline-block;border:2px solid #eee;height:60px;width:60px;margin-right:5px;}
+.eb-badge { margin-right: 15px;}

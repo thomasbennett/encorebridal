@@ -66,6 +66,14 @@
             <?php
             preg_match_all("/\/?(\w+)\/?/", $_SERVER['REQUEST_URI'], $matches);
 
+            if($matches[1][count($matches[1]) - 1] == 'onepage' ||
+               $matches[1][count($matches[1]) - 1] == 'contacts') : ?>
+              <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
+              <div class="col-main">
+                <?php echo $this->getChildHtml('content'); ?>
+              </div>
+            <?php endif;
+
             if($matches[1][count($matches[1]) - 1] == 'blog' ||
                $matches[1][count($matches[1]) - 2] == 'page')
                 echo $this->getChildHtml('blog');

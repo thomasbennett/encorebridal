@@ -4,3 +4,4 @@ var/cache/*
 var/session/*
 var/locks/*
 var/reports/*
+media/catalog/product/cache/*

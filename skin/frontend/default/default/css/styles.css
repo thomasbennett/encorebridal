@@ -159,7 +159,7 @@ button.button { overflow:visible; width:auto; border:0; padding:0; margin:0; bac
 button.button span span { border:0; padding:0; }
 button.disabled span { border-color:#bbb !important; background:#bbb !important; }
 
-button.btn-checkout span { height:40px; border:0; background:url(../images/btn_checkout.gif) 0 0 no-repeat; padding:0 0 0 9px; font:bold 15px/40px Arial, Helvetica, sans-serif; color:#fff; }
+button.btn-checkout span { height:40px; border:0; padding:0 0 0 9px; font:bold 15px/40px Arial, Helvetica, sans-serif; color:#fff; }
 button.btn-checkout span span { background-position:100% 0; padding:0 25px 0 16px; }
 button.btn-checkout.no-checkout span { background-position:0 100%; color:#b8baba; }
 button.btn-checkout.no-checkout span span { background-position:100% 100%; }
@@ -293,7 +293,7 @@ input.input-text:focus,select:focus,textarea:focus { background-color:#edf7fd; }
 .buttons-set-order .please-wait { padding:12px 7px 0 0; }
 
 .fieldset { border:1px solid #bbafa0; background:#fbfaf6; padding:22px 25px 12px 33px; margin:28px 0; }
-.fieldset .legend { float:left; font-weight:bold; font-size:13px; border:1px solid #f19900; background:#f9f3e3; color:#e76200; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
+.fieldset .legend { float:left; font-weight:bold; font-size:34px; background:#f9f3e3; color:#e76200; margin:-33px 0 0 -10px; padding:0 8px; position:relative; }
 
 /* Form Validation */
 .validation-advice { clear:both; min-height:13px; margin:3px 0 0; padding-left:17px; font-size:11px; font-weight:bold; line-height:13px; background:url(../images/validation_advice_bg.gif) 2px 0 no-repeat; color:#eb340a; }
@@ -637,9 +637,9 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Block: Account */
 .block-account { border-color:#bbb; }
-.block-account .block-title { background:#fc9d36 url(../images/bkg_block-title-account.gif) 0 100% repeat-x; border:0; padding:3px 10px; }
+.block-account .block-title { background:#f16048; border:0; padding:3px 10px; }
 .block-account .block-title strong { font-size:13px; color:#fff; }
-.block-account .block-content { background:#fbfaf6; padding:7px 10px 7px; }
+.block-account .block-content { background: none; padding:7px 20px 7px 0 !important; }
 .block-account .block-content li a { display:block; border-bottom:1px solid #ddd; padding:3px 0; color:#5f5d5c; text-decoration:none !important; }
 .block-account .block-content li a:hover { color:#ea7900; }
 .block-account .block-content li.last a { border-bottom:0; }
@@ -1170,6 +1170,7 @@ tr.summary-details-excluded { font-style:italic; }
 .cart .page-title h1 { margin:10px 0 0; }
 
 /* Checkout Types */
+#checkoutSteps { margin-bottom: 20px; }
 .cart .page-title .checkout-types li { margin:0 0 5px; }
 .cart .title-buttons .checkout-types { float:right; }
 .cart .title-buttons .checkout-types li { float:left; margin:0 0 5px 5px; }
@@ -1183,13 +1184,11 @@ tr.summary-details-excluded { font-style:italic; }
 .cart-table .item-msg { margin:5px 0; font-size:11px; font-weight:bold; color:#df280a; }
 .cart-table tfoot td { padding:5px 10px; }
 .cart-table .btn-continue { float:left; }
-.cart-table .btn-continue span,
-.cart-table .btn-update span { border-color:#406a83; background:#618499; }
 
 /* Shopping Cart Collateral boxes */
 .cart .cart-collaterals { padding:25px 0 0; }
 .cart .cart-collaterals .col2-set { float:left; width:605px; }
-.cart .cart-collaterals .col2-set .col-2 { width:294px; }
+.cart .cart-collaterals .col2-set .col-2 { width:600px; }
 
 .cart .crosssell { border:1px solid #cec3b6; background:#fafaec; padding:12px 15px; }
 .cart .crosssell h2 { font-size:13px; font-weight:bold; }
@@ -1201,11 +1200,10 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Discount Codes & Estimate Shipping and Tax Boxes */
 .cart .discount,
-.cart .shipping { border:1px solid #d0cbc1; background:#fff url(../images/bkg_block-title.gif) 0 0 repeat-x; padding:12px 15px; margin:0 0 18px; }
+.cart .shipping { border:1px solid #d0cbc1; background:#fff url(../images/bkg_block-title.gif) 0 0 repeat-x; padding:12px 15px; margin:0 0 18px; clear: left; float: left; }
+.shipping input, .discount input { width: 580px; }
 .cart .discount h2,
 .cart .shipping h2 { background-position:0 0; background-repeat:no-repeat; font:bold 13px/16px Arial, Helvetica, sans-serif; padding:0 0 0 21px; color:#e26703; text-transform:uppercase; }
-.cart .discount button span,
-.cart .shipping button span { border-color:#406a83; background:#618499; }
 .cart .discount .buttons-set,
 .cart .shipping .buttons-set { margin:10px 0 0; border:0; padding:0; text-align:left; }
 .cart .discount .buttons-set button.button,
@@ -1219,7 +1217,7 @@ tr.summary-details-excluded { font-style:italic; }
 .cart .shipping .sp-methods { margin:10px 0 0; padding:5px 0 0; background:url(../images/bkg_divider1.gif) 0 0 repeat-x; }
 
 /* Shopping Cart Totals */
-.cart .totals { float:right; width:268px; background:#dee5e8; border:1px solid #bebcb7; }
+.cart .totals { float:right; width:268px; background:#dee5e8; border:1px solid #bebcb7; padding-top: 10px;}
 .cart .totals table { width:100%; margin:7px 0; }
 .cart .totals td { padding:1px 15px 1px 7px; }
 .cart .totals tr.last td {}
@@ -1376,9 +1374,9 @@ tr.summary-details-excluded { font-style:italic; }
 .opc .allow .step-title h2 { color:#a4b3b9; }
 /*.opc .allow .step-title a { display:block; }*/
 
-.opc .active .step-title { background:#f9f3e3; border:1px solid #bbafa0; padding-bottom:5px; color:#f18200; cursor:default; }
-.opc .active .step-title .number { background:#f18200; border-color:#f19900; color:#fff; }
-.opc .active .step-title h2 { color:#f18200; }
+.opc .active .step-title { background:#fb4949; border:1px solid #bbafa0; padding:5px; color:#000; cursor:default; }
+.opc .active .step-title .number { background:#fff; border-color:#999; color:#000; }
+.opc .active .step-title h2 { color:#000; line-height: 1.8}
 /*.opc .active .step-title a { display:none; }*/
 
 .opc .step { border:1px solid #bbafa0; border-top:0; background:#fbfaf6 url(../images/bkg_checkout.gif) 0 0 repeat-x; padding:15px 30px; position:relative; }
@@ -1494,7 +1492,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* General Box */
 .box-account { background:#fff url(../images/bkg_account_box.gif) 0 0 repeat-x; border:1px solid #ccc; border-color:#ccc #999 #999 #ccc; padding:15px; margin: 0 0 20px; }
 .box-account .box-head { border-bottom:1px solid #d9dde3; margin:0 0 10px; text-align:right; }
-.box-account .box-head h2 { float:left; margin:0; font-size:13px; font-weight:bold; text-transform:uppercase; background-position:0 0; background-repeat:no-repeat; padding-left:21px; color:#e65505; }
+.box-account .box-head h2 { float:left; margin:0; font-size:34px; font-weight:bold; text-transform:none; background-position:0 0; background-repeat:no-repeat; padding-left:21px; color:#e65505; }
 
 .dashboard .box .box-title { background:url(../images/bkg_divider1.gif) 0 100% repeat-x; padding:0 0 2px; margin:0 0 8px; text-align:right; }
 .dashboard .box .box-title h3,
@@ -1604,8 +1602,6 @@ tr.summary-details-excluded { font-style:italic; }
 .my-wishlist textarea { display:block; width:97%; height:109px; }
 .my-wishlist .buttons-set { margin-top:2em; }
 .my-wishlist .buttons-set button.button { float:none; }
-.my-wishlist .buttons-set .btn-add span,
-.my-wishlist .buttons-set .btn-share span { border-color:#406a83; background:#618499; }
 #wishlist-table .add-to-links { white-space:nowrap; }
 
 /* My Tags */

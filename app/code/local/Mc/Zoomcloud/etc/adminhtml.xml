@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+   <menu>
+		<magentoconnect>
+			<title>Infyways Store</title>
+			<sort_order>74</sort_order>  
+			<children>
+				<Zoomcloud module="Zoomcloud">
+					<title>Cloud Zoom</title>
+					<sort_order>6</sort_order>
+					<children>
+						<Zoomcloud_config module="Zoomcloud">
+							<title>Configuration</title>
+							<sort_order>999</sort_order>
+							<action>adminhtml/system_config/edit/section/Zoomcloud</action>
+						</Zoomcloud_config>
+					</children>
+				</Zoomcloud>
+			</children>
+		</magentoconnect>
+	</menu>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<Zoomcloud translate="title" module="Zoomcloud">
+										<title>Cloud Zoom</title>
+										<sort_order>55</sort_order>
+									</Zoomcloud>
+								</children>
+							</config>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

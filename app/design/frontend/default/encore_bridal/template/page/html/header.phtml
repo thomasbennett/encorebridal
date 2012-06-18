@@ -14,13 +14,15 @@
               </script>
           </form>
         </div>
-				<!--<a href="#" class="login">LOGIN</a> |
-				<a href="#">CART</a> |-->
         <?php // echo $this->getChildHtml('topLinks') ?>
         <div class="right" style="clear:right;">
-          <a href="http://demo.encorebridal.com/index.php/customer/account/login/" title="LOGIN" class="login">LOGIN</a> |
-          <a href="http://demo.encorebridal.com/index.php/checkout/cart/" title="CART">CART</a> |
-          <a href="http://demo.encorebridal.com/index.php/contacts">CONTACT</a> |
+          <?php if($this->helper('customer')->isLoggedIn()): ?>
+            <a href="/index.php/customer/account/" title="My Account" class="login">MY ACCOUNT</a> |
+          <?php else: ?>
+            <a href="/index.php/customer/account/login/" title="LOGIN" class="login">LOGIN</a> |
+          <?php endif; ?>
+          <a href="/index.php/checkout/cart/" title="CART">CART</a> |
+          <a href="/index.php/contacts">CONTACT</a> |
           <a href="#">310.545.1409</a>
         </div>
 			</div>
