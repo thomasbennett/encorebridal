@@ -2,3 +2,5 @@ app/etc/local.xml
 *.DS_Store
 var/cache/*
 var/session/*
+var/locks/*
+var/reports/*
