@@ -1,4 +1,8 @@
-var/cache/
-var/session/
+app/etc/local.xml
+*.DS_Store
+var/cache/*
+var/session/*
+var/locks/*
+var/reports/*
 media/catalog/product/cache/*
 media_bak/
