@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <layout>
     <default>
       <reference name="head">
@@ -107,4 +107,26 @@
   </reference>
 </page_homepage_index>
 
+<newitems_index_index>
+    <reference name="root">
+        <action method="setTemplate">
+            <template>page/2columns-newitems.phtml</template>
+        </action>
+    </reference>
+    <reference name="content">
+        <block type="newitems/newitems" name="newitems" template="newitems/newitems.phtml" />
+    </reference>
+
+</newitems_index_index>
+    
+<microcollections_index_index>
+  <reference name="root">
+    <action method="setTemplate">
+      <template>page/1column.phtml</template>
+    </action>
+  </reference>
+  <reference name="content">
+    <block type="microcollections/collections" name="microcollections" template="microcollections/collections.phtml" />
+  </reference>
+</microcollections_index_index>
 </layout>
