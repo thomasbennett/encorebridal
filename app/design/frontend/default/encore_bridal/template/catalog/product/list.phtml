@@ -36,7 +36,7 @@
     $_helper = $this->helper('catalog/output');
     $category = $this->getLayer()->getCurrentCategory()->getName();
 ?>
-<?php if($category == 'accessories'): $ht = '180'; $wt = '220'; else: $ht = '330'; $wt = '220'; endif; ?>
+<?php if($category == 'accessories'): $ht = '148'; $wt = '220'; else: $ht = '330'; $wt = '220'; endif; ?>
 
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
