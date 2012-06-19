@@ -16,16 +16,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'db141781_encore_wp');
+define('DB_NAME', 'encore_blog');
 
 /** MySQL database username */
-define('DB_USER', 'db141781');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'UNj3fBD7a');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
-define('DB_HOST', 'internal-db.s141781.gridserver.com');
+define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

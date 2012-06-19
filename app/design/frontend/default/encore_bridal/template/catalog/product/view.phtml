@@ -54,16 +54,16 @@
         </div>
 
         <div class="product-shop">
-            <h1 class="product_title"><?php echo $_product->getAttributeText('designer_select');?> Custom "<?php echo $_product->getName();?>", Casual Dress Size <?php echo $_product->getAttributeText('sizefit');?></h1>
+            <h1 class="product_title"><?php echo $_product->getName();?></h1>
             <hr />
 
             <div class="large_retail">Retail: <span class="retail">$<?php echo ((int)$_product->getPrice());?><sup>00</sup></span></div>
 
             <?php if((int)$_product->getSpecialPrice() != 0) { ?>
-              <div class="large_eb_cost">EB Cost: $<?php echo ((int)$_product->getSpecialPrice());?><sup>00</sup></div>
+              <div class="large_eb_cost">EB Price: $<?php echo ((int)$_product->getSpecialPrice());?><sup>00</sup></div>
               <div class="large_savings">Save: $<?php echo ((int)$_product->getPrice() - (int)$_product->getSpecialPrice());?><sup>00</sup></div>
             <?php } else { ?>
-              <div class="large_eb_cost">Encore Bridal Cost: $<?php echo ((int)$_product->getPrice());?><sup>00</sup></div>
+              <div class="large_eb_cost">EB Price: $<?php echo ((int)$_product->getPrice());?><sup>00</sup></div>
               <div class="large_savings">Save: $0<sup>00</sup></div>
             <?php } ?>
 
@@ -118,18 +118,18 @@
               </ul>
               <div id="product_detail_tabs-1"><?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), nl2br($this->getProduct()->getDescription()), 'description')?></div>
               <div id="product_detail_tabs-2">
-                  <span class="product_height">Height: </span>
-                  <?php echo $_product->getAttributeText('height'); ?><br/>
-                  <?php echo $_product->getAttributeText('sizefit');?>
+                  <?php /*<span class="product_height">Height: </span>
+                  <?php echo $_product->getAttributeText('height'); ?> */ ?>
+                  <?php echo $_product->getAttributeText('size_fit_info'); ?>
               </div>
               <div id="product_detail_tabs-3">
                 <?php 
                 $eb_badge = $_product->getData('eb_badge');
-                if($eb_badge == '226'): $eb_badge = 'pristine'; 
-                elseif($eb_badge == '225'): $eb_badge = 'excellent'; 
-                elseif($eb_badge == '224'): $eb_badge = 'verygood'; 
-                elseif($eb_badge == '223'): $eb_badge = 'good'; 
-                elseif($eb_badge == '222'): $eb_badge = 'fair'; 
+                if($eb_badge == '234'): $eb_badge = 'pristine'; 
+                elseif($eb_badge == '233'): $eb_badge = 'excellent'; 
+                elseif($eb_badge == '232'): $eb_badge = 'verygood'; 
+                elseif($eb_badge == '231'): $eb_badge = 'good'; 
+                elseif($eb_badge == '230'): $eb_badge = 'fair'; 
                 endif;
                 echo '<img src="'.$this->getSkinUrl().'images/eb-'.$eb_badge.'.jpg" alt="'.$eb_badge.'" class="f-left eb-badge" width="130" />';
                 echo $_product->getData('conditions');
@@ -240,8 +240,8 @@
         <br clear="both" />
 
 			</div>
-			<div id="more_tabs-2"><span><?php echo $_product->getData('returnpolicy');?></span></div>
-			<div id="more_tabs-3"><span><?php echo $_product->getData('freeguarantee');?></span></div>
+			<div id="more_tabs-2"><span>Returns accepted. Notify Encore Bridal of intent to return within 7 days from delivery date. Restocking fee may apply. See Return Policy for more information.</span></div>
+			<div id="more_tabs-3"><span> We inspect gowns prior to adding them to our e-Boutique and again prior to shipping. Only gowns that are AUTHENTIC and meet our high-level condition standards are added to our e-Boutique. The condition of the gown is listed in the gown description. We attempt to fully disclose all evidence of wear, tear, and damage. We want all of our brides to be thrilled with the gown they purchased from Encore Bridal. If once received you note the condition rating of the gown was mis-represented we will not only provide a full refund (should you choose to return it), but will send you a $25 gift card to reimburse you for your time. Please note that we sell pre-owned wedding dresses and accessories, so most gowns will not be in perfect, straight from the manufacturer condition.  </span></div>
 
 		</div>
 
@@ -281,5 +281,7 @@
 			$('#product_detail_tabs').tabs();
 			$('#more_tabs').tabs();
       $('.link-wishlist').text('Add to Dressing Room');
+
+      $('.zoom-desc').find('p').find('a').first().hide();
 		})
 	</script>
