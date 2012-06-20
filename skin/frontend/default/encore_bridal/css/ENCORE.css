@@ -242,6 +242,7 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 #heading_new_products				{top: -30px; margin-bottom: -25px;}
 .products-grid .item						{background: url('../images/bg_gray_box.jpg') left top repeat; width: 299px; height: auto; border: 1px solid #dfdfdf; padding: 3px;}
 .product_details					{ border: 1px solid #dfdfdf; padding: 10px;height:120px;}
+>>>>>>> origin/master
 
 
 /* DRESSES */
@@ -472,3 +473,6 @@ QUICK SEARCH layered NAVIGATION
 .eb-badge { margin-right: 15px;}
 .zoom-desc p a img { margin-bottom: 5px; }
 .zoom-small-image img { border: 1px solid #999; }
+
+/* MICROCOLLECTIONS */
+#wrapper .microcollections .item { background: none; border: 0 !important; margin-right: 13px; margin-bottom: 60px !important }

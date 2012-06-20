@@ -12,31 +12,38 @@ Version: 1
 html, html>body, body				{margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #5e5e5f;}
 a:link,
 a:visited,
-a:active							{text-decoration: underline; color: #5e5e5f;}
-a:hover								{text-decoration: none; color: #5e5e5f;}
+a:active						{text-decoration: underline; color: #5e5e5f;}
+a:hover							{text-decoration: none; color: #5e5e5f;}
 
 h1									{font-family: "proxima-nova", Arial, Helvetica; color: #666; font-size: 20px; text-transform: uppercase; font-weight: bold;}
-h2									{font-family: "federico-web", Arial, Helvetica, sans-serif; font-size: 48px; color: #000; padding: 0; margin: 0; font-weight: normal; line-height: 28px;}
+h2									{font-family: "federico-web", Arial, Helvetica, sans-serif; font-size: 45px; color: #444; padding: 0; margin: 0; font-weight: normal; line-height: 1em; word-spacing: .1em; border-bottom: 1px solid #8acede; margin-bottom: 20px; }
 h3									{font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; color: #f26967; font-weight: bold; font-size: 18px; margin: 0; padding: 0;}
 h3 a:link,
 h3 a:visited,
-h3 a:active							{color: #f26967; text-decoration: none;}
-h3 a:hover							{color: #717174; text-decoration: none;}
+h3 a:active					{color: #f26967; text-decoration: none;}
+h3 a:hover					{color: #717174; text-decoration: none;}
+h4                  { font-family: 'federico-web', Arial, Helvetica, sans-serif; color: #ed6967; font-size: 60px; margin-bottom: 0; }
 h5									{color: #717174; text-transform: uppercase; font-family: "droid-serif", Georgia, "Times New Roman", Times, serif; font-size: 10px; font-weight: normal; letter-spacing: .1em; padding-bottom: 10px; margin: 0;}
 
 hr 									{background: url('images/hr_dotted.png') left top repeat-x; height: 12px; border: none; padding: 0; margin: 20px 0;}
-hr.single							{height: 6px; margin: 10px 0;}
-hr.space							{background: none; height: 10px; margin: 0;}
+hr.single						{height: 6px; margin: 10px 0;}
+hr.space						{background: none; height: 10px; margin: 0;}
 
 /* FORM */
-label								{font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bold; text-transform: uppercase; color: #717174;}
+label								{font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 13px; color: #717174;}
 input[type=text],
-input.text 							{background: #EFEFEF; border: 1px solid #BBB; padding: 5px 10px; height: 21px; margin: 0 0 5px 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: relative; width: 300px;}
+input.text 							{background: #fff; border: 1px solid #999; border-radius: 6px; float: left;padding: 4px; margin: 2px 0 5px 0; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
 input.submit,
-input[type=submit]					{background: #a09e9e; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 5px 10px !important; border: 4px double #FFF; cursor: pointer;}
+input[type=submit]					{background: #ed6967; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 6px 10px !important; cursor: pointer; float: left; margin-left: 5px; border: 0; border-radius: 6px;  }
 input.submit:hover,
 input[type=submit]:hover			{background: #f26967;}
 textarea 							{background: #EFEFEF; height: 150px; width: 300px; padding: 10px; font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 14px;}
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.inline li { display: inline-block; float: left; }
+ul { margin-left: 0; padding-left: 0; }
+li { list-style: none; }
 
 /* TABLE */
 table								{background: #EFEFEF;}
@@ -45,8 +52,8 @@ th,
 td									{border: 1px solid #FFF; text-align: center;}
 
 /* ==== LAYOUT STYLES ========================================= */
-#wrapper							{background: url('images/bg_bottom.jpg') center top no-repeat; height: 100%;}
-#son_of_wrapper						{background: url('images/bg_header.jpg') center top no-repeat; min-height: 670px; padding-top: 20px;}
+#wrapper							{background: url('images/background.png') left top repeat; height: 100%;}
+#son_of_wrapper						{min-height: 670px;}
 
 #top_nav							{font-size: 12px; color: #999; text-transform: uppercase; font-family: "proxima-nova", Arial, Helvetica, sans-serif; position: relative; top: -5px;}
 #top_nav a:link,
@@ -71,7 +78,11 @@ td									{border: 1px solid #FFF; text-align: center;}
 #navigation ul li.menu-item-215 a 	{font-family: "federico-web"; color: #f26967; text-transform: lowercase !important; padding: 0; margin: 0; line-height: 12px; font-size: 45px;}
 
 /* SIDEBAR */
-#sidebar h2 						{font-family: "proxima-nova"; text-transform: uppercase; font-size: 14px; color: #555; font-weight: bold;}
+#sidebar { width: 260px; }
+#sidebar input { margin-bottom: 60px; }
+#sidebar { font-family: 'proxima-nova', Arial, Helvetica, sans-serif; }
+.socials li { margin-right: 4px; }
+.socials li img { width: 42px; }
 
 /* BIG FOOTER */
 #big_footer							{color: #888; font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; background: #bebfbf;}
@@ -156,8 +167,6 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 
 
 /* BLOG */
-#archive_heading h2,
-#blog_post_content h2					{font-family: "proxima-nova"; font-size: 24px; text-transform: uppercase; font-weight: bold; color: #444;}
 #archive_heading h2 				{font-size: 32px; margin-bottom: 20px;}
 #blog_post_content h2 a:link,
 #blog_post_content h2 a:visited,
@@ -195,3 +204,5 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 #more_tabs .product_box:last-child {margin-right: 0;}
 #more_tabs .product_details  	{height: 113px !important;}
 #more_tabs .ui-tabs-panel {padding: 0 0 0 3px !important;}
+
+.typekit-badge { display: none !important; }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <frontend>
+    <routers>
+      <microcollections>
+        <use>standard</use>
+        <args>
+          <module>Encore_Microcollections</module>
+          <frontName>accessories</frontName>
+        </args>
+      </microcollections>
+    </routers>
+  </frontend>
+  <global>
+    <blocks>
+      <microcollections>
+        <rewrite>
+          <collections>Encore_Microcollections_Block_Collections</collections>
+        </rewrite>
+      </microcollections>
+    </blocks>  
+  </global>
+</config>

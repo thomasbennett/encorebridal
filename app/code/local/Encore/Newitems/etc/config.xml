@@ -1,0 +1,22 @@
+<config>
+    <global>
+        <blocks>
+            <newitems>
+                <rewrite>
+                    <newitems>Encore_Newitems_Block_Newitems</newitems>
+                </rewrite>
+            </newitems>
+        </blocks>
+    </global>
+    <frontend>
+        <routers>
+            <newitems>
+                <use>standard</use>
+                <args>
+                    <module>Encore_Newitems</module>
+                    <frontName>newitems</frontName>
+                </args>
+            </newitems>
+        </routers>
+    </frontend>
+</config>

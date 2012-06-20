@@ -318,11 +318,12 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 /* Sorter */
 .sorter { margin:5px 0; }
 .sorter .view-mode { float:left; display: none; }
-.sorter .sort-by { float:right; }
+.sorter .sort-by { float:right; margin-top: -5px;}
 .sorter .link-feed {}
 
 /* Toolbar */
-.toolbar { height: 32px; margin-top: -37px; margin-bottom: 5px; }
+.category-products { margin-top: -37px; }
+.toolbar { font-family: 'proxima-nova'; height: 32px; margin-bottom: 5px; }
 .toolbar .pager {}
 .toolbar .sorter { margin-top: -37px; }
 .toolbar-bottom {}

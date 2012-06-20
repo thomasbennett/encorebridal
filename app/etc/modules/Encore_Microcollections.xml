@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+ <modules>
+  <Encore_Microcollections>
+   <codePool>local</codePool>
+   <active>true</active>
+  </Encore_Microcollections>
+ </modules>
+</config>

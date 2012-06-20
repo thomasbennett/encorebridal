@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Encore_Newitems>
+            <version>0.1.0</version>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Encore_Newitems>
+    </modules>
+</config>

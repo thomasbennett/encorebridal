@@ -1,0 +1,60 @@
+<?php
+
+$micros_collection = Mage::getModel('catalog/category')->
+  getCollection()->
+  addAttributeToSelect('name')->
+  addAttributeToFilter('name', array('eq' => 'accessories'));
+echo "<pre>";
+foreach($micros_collection as $microCategory)
+{
+  $sortedChildren = Mage::getModel('catalog/category')->
+    getCollection()->
+    addAttributeToSelect('name')->
+    addAttributeToSelect('include_in_menu')->
+    addAttributeToFilter('entity_id', array('in' => explode(',', $microCategory->getChildren())))->
+    setOrder('name', 'ASC');
+  foreach($sortedChildren as $microCat)
+  {
+    if($microCat->getName() != 'View All')
+    {
+      $subCatIds[] = $microCat->getId();
+    } else {
+      $lastCatId = $microCat->getId();
+    }
+  }
+  $subCatIds[] = $lastCatId;
+}
+echo "</pre>";
+?>
+    <?php if(count($subCatIds) > 1):?>
+      <ul class="microcollections products-grid">
+        <?php foreach($subCatIds as $subCat) :?>
+          <li class="item">
+            <?php $subCategory = Mage::getModel('catalog/category')->load($subCat); ?>
+            <?php $_helper = $this->helper('catalog/output'); ?>
+            <?php 
+                  if ($_imgUrl = $this->getImageUrl($subCategory->getThumbnail())) {
+                      $_imgHtml = '<span class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->htmlEscape($subCategory->getName()).'" title="'.$this->htmlEscape($subCategory->getName()).'" width="220" /></span>';
+                      $_imgHtml = $_helper->categoryAttribute($subCategory, $_imgHtml, 'image');
+                  } ?>
+              <?php if($_imgUrl): ?>
+                 <a class="product-image" href="<?php echo $subCategory->getUrl(); ?>"><?php echo $_imgHtml ?></a>
+              <?php endif; ?>
+            <h2 class="product-name">
+              <a class="micros-landing-link" href="<?php echo $subCategory->getUrl(); ?>"><?php echo $subCategory->getName(); ?></a>
+            </h2>
+          </li>
+        <?php endforeach;?>
+      </ul>
+    <?php endif; ?>
+<script>
+/* 
+** catch every 4th and add kill the right margin
+** catch every 5th and add a clear afterward to clean up line break
+*/
+  jQuery(function($){
+      $('ul.products-grid').find('li:nth-child(4n)').after('<div class="clearer"></div>');
+      $('ul.products-grid').find('li:nth-child(5n-1)').css({'padding-right':'0', 'margin-right':'0'});
+      $('ul.products-grid').find('li.item').last().hide();
+  });
+</script>

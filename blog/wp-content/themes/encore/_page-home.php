@@ -164,7 +164,7 @@ Template Name: Home
 		<hr />
 	
 
-<!-- NEW PRODUCTS -->
+    <!-- NEW PRODUCTS -->
 		<h2 class="paint" id="heading_new_products">new products</h2>
 		<div class="span-8">
 			<div class="product_box">

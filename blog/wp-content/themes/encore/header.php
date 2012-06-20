@@ -33,8 +33,8 @@
 	</title>
 	
 	<!-- TYPEKIT -->
-	<script type="text/javascript" src="http://use.typekit.com/iry1tqb.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="http://use.typekit.com/aku1dxo.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/screen.css" type="text/css" media="screen, projection">
