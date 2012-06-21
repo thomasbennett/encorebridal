@@ -6,7 +6,7 @@
 	// Load jQuery
 	if ( !is_admin() ) {
 	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"), false);
+	   wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"), false);
 	   wp_enqueue_script('jquery');
 	}
 	
@@ -20,29 +20,43 @@
     
     if (function_exists('register_sidebar')) {
     	register_sidebar(array(
-    		'name' => 'Sidebar Widgets',
+    		'name' => 'Sidebar Large Ad',
     		'id'   => 'sidebar-widgets',
-    		'description'   => 'These are widgets for the sidebar.',
+    		'description'   => 'These are advertisements for the sidebar.',
     		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    		'after_widget'  => '</div>',
-    		'before_title'  => '<h2>',
-    		'after_title'   => '</h2>'
+    		'after_widget'  => '</div>'
+    	));
+
+      register_sidebar(array(
+    		'name' => 'Sidebar Secondary Ads',
+    		'id'   => 'sidebar-ads-2',
+    		'description'   => 'These are smaller advertisements for the sidebar.',
+    		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    		'after_widget'  => '</div><hr />'
+    	));
+
+      register_sidebar(array(
+    		'name' => 'Primary Ad',
+    		'id'   => 'primary-ad',
+    		'description'   => 'Primary ad for blog feed.',
+    		'before_widget' => '<div id="%1$s" class="primary-feed-ad widget %2$s">',
+    		'after_widget'  => '</div>'
     	));
     }
 
 
 	// CUSTOM WORDPRESS MENU
 	// IN FUNCTION.PHP
-	     function register_menus() {
-	          register_nav_menus(array(
-	               'primary-menu' => __('Primary Menu'),
-	               'footer-about' => __('Footer About'),
-	               'footer-consignors' => __('Footer Consignors'),
-	               'footer-customer-service' => __('Footer Customer Service'),
-	               'footer-for-brides' => __('Footer For Brides')
-	          ));
-	     }
-	     add_action('init', 'register_menus');
+   function register_menus() {
+        register_nav_menus(array(
+             'primary-menu' => __('Primary Menu'),
+             'footer-about' => __('Footer About'),
+             'footer-consignors' => __('Footer Consignors'),
+             'footer-customer-service' => __('Footer Customer Service'),
+             'footer-for-brides' => __('Footer For Brides')
+        ));
+   }
+   add_action('init', 'register_menus');
 	
 	// Add Featured image support
 	add_theme_support( 'post-thumbnails' );

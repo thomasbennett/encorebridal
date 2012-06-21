@@ -1,5 +1,5 @@
 <div id="sidebar">
-   <h4>Subscribe</h4> 
+   <h4 class="left">Subscribe</h4> 
   <div class="subscribe-detail">
     <strong>Be the First to Know</strong><br />
     <span>
@@ -26,13 +26,13 @@
 
   <?php get_search_form(); ?>
 
-  <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar Widgets')) : else : ?>
+  <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar Large Ad')) : else : ?>
   <?php endif; ?>
   
   <div class="clear"></div>
 
-  <h2>Categories</h2>
-  <ul>
+  <h5>Categories</h5>
+  <ul class="categories">
    <?php foreach(get_categories() as $cat): ?>
     <li>
       <img src="<?php echo z_taxonomy_image_url($cat->term_id); ?>" />
@@ -41,12 +41,6 @@
    <?php endforeach; ?>
   </ul>
 
-  <br clear="both" />
-
-  <h2>Archives</h2>
-  <ul>
-    <?php wp_get_archives('type=monthly'); ?>
-  </ul>
-
-  <br clear="both" />
+  <hr />
+  <div class="clear"></div>
 </div>

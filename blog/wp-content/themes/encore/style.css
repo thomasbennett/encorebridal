@@ -38,8 +38,8 @@ input[type=submit]					{background: #ed6967; font-family: "proxima-nova", Arial,
 input.submit:hover,
 input[type=submit]:hover			{background: #f26967;}
 textarea 							{background: #EFEFEF; height: 150px; width: 300px; padding: 10px; font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 14px;}
-.left { float: left; }
-.right { float: right; }
+.left { float: left !important; }
+.right { float: right !important; }
 .clear { clear: both; }
 .inline li { display: inline-block; float: left; }
 ul { margin-left: 0; padding-left: 0; }
@@ -78,11 +78,29 @@ td									{border: 1px solid #FFF; text-align: center;}
 #navigation ul li.menu-item-215 a 	{font-family: "federico-web"; color: #f26967; text-transform: lowercase !important; padding: 0; margin: 0; line-height: 12px; font-size: 45px;}
 
 /* SIDEBAR */
-#sidebar { width: 260px; }
+#sidebar { color: #333; width: 290px; }
 #sidebar input { margin-bottom: 60px; }
 #sidebar { font-family: 'proxima-nova', Arial, Helvetica, sans-serif; }
+#sidebar h4.left { margin-right: 20px; }
 .socials li { margin-right: 4px; }
 .socials li img { width: 42px; }
+.subscribe-detail { float: left; font-family: 'proxima-nova', Arial, sans-serif; font-size: .9em; line-height: 1.1;}
+.subscribe-detail strong { font-weight: normal; font-size: 1.2em; line-height:1.6;}
+.span-6.right { width: 290px; }
+.subscribe-field { width: 210px;}
+#sidebar h5 { font-family: 'proxima-nova', Arial, sans-serif; color: #222; font-size: 1.2em;}
+.categories li { float: left; width: 125px; margin-right: 9px; margin-bottom: 20px;}
+.categories a { text-transform: uppercase; text-decoration: none; }
+.widget_anual_archive h2.widgettitle {font-family: 'proxima-nova', Arial, sans-serif; color: #222; font-size: 1.2em;  border: 0; text-transform: uppercase;}
+.primary-ad-img { max-width: 630px; margin-bottom: 40px; }
+#sidebar input { font-size: .85em; }
+
+
+/* COMMENTS */
+#respond label { display: block; float: left; width: 100%; }
+
+/*search*/
+#s  {width:280px;margin:20px 0 40px !important;}
 
 /* BIG FOOTER */
 #big_footer							{color: #888; font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; background: #bebfbf;}
@@ -175,6 +193,7 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 #blog_post_content .postmetadata,
 #blog_post_content .meta 			{font-size: 11px; text-transform: uppercase; margin-bottom: 15px;}
 #blog_post_content .postmetadata 	{background-color: #EFEFEF; width: 100%; padding: 10px;}
+#blog_post_content { padding-right: 10px; }
 
 /* COMMENTS */
 .one_comment						{margin: 10px 0 20px 0;}

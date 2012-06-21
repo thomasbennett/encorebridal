@@ -4,7 +4,13 @@
 	<hr />
 	<hr class="space" />
 
-	<div class="span-17 append-1" id="blog_post_content">
+  <div class="span-6 last right">
+    <div id="sidebar">
+      <?php get_sidebar(); ?>
+      <?php get_sidebar('secondary'); ?>
+    </div>
+  </div>
+  <div class="span-16" id="blog_post_content">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
@@ -24,7 +30,6 @@
 
 			<div class="postmetadata">
 				<?php edit_post_link('Edit this entry','','<br />'); ?>
-				<?php the_tags('Tags: ', ', ', '<br />'); ?>
 				Posted in <?php the_category(', ') ?> :: 
 				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
 			</div>
@@ -48,10 +53,6 @@
 		<h2>Not Found</h2>
 
 	<?php endif; ?>
-	</div>
-
-	<div class="span-6 last">
-	<?php get_sidebar(); ?>
 	</div>
 
 	<hr class="space" />

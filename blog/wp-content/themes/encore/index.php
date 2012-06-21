@@ -4,8 +4,15 @@
 	<hr />
 	<hr class="space" />
 
-	<div class="span-17 append-1" id="blog_post_content">
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <div class="span-6 last right">
+      <div id="sidebar">
+        <?php get_sidebar(); ?>
+        <?php get_sidebar('secondary'); ?>
+      </div>
+    </div>
+    <div class="span-16" id="blog_post_content">
+    <?php get_sidebar('primary-ad') ?>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<?php if (has_post_thumbnail()) { ?>
@@ -46,12 +53,16 @@
 	<?php endif; ?>
 	</div>
 
-	<div class="span-6 last">
-	<?php get_sidebar(); ?>
-	</div>
 
 	<hr class="space" />
 
 <?php include (TEMPLATEPATH . '/inc/featured-on.php' ); ?>
 
+<script>
+  jQuery(function($){
+    var target = $('.primary-feed-ad').find('.textwidget'),
+        imgsrc = target.html();
+    target.replaceWith('<img src="'+imgsrc+'" class="primary-ad-img" />');    
+  });
+</script>
 <?php get_footer(); ?>
