@@ -89,7 +89,7 @@ td									{border: 1px solid #FFF; text-align: center;}
 .span-6.right { width: 290px; }
 .subscribe-field { width: 210px;}
 #sidebar h5 { font-family: 'proxima-nova', Arial, sans-serif; color: #222; font-size: 1.2em;}
-.categories li { float: left; width: 125px; margin-right: 9px; margin-bottom: 20px;}
+.categories li { float: left; width: 125px; margin-right: 9px; margin-bottom: 20px; height: 180px;}
 .categories a { text-transform: uppercase; text-decoration: none; }
 .widget_anual_archive h2.widgettitle {font-family: 'proxima-nova', Arial, sans-serif; color: #222; font-size: 1.2em;  border: 0; text-transform: uppercase;}
 .primary-ad-img { max-width: 630px; margin-bottom: 40px; }
