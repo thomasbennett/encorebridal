@@ -9,8 +9,8 @@
   </div>
 
   <form>
-    <input type="text" class="subscribe-field" alt="Enter your email" />
-    <input type="submit" class="subscribe-submit" alt="Sign Up" />
+    <input type="text" class="subscribe-field" value="Enter your email" />
+    <input type="submit" class="subscribe-submit" value="Sign Up" />
   </form>
   <div class="clear"></div>
 
