@@ -44,7 +44,8 @@ echo "</pre>";
                       $_imgHtml = $_helper->categoryAttribute($subCategory, $_imgHtml, 'image');
                   } ?>
               <?php if($_imgUrl): ?>
-                 <a class="product-image" href="<?php echo $subCategory->getUrl(); ?>"><?php echo $_imgHtml ?></a>
+                  <?php $catUrl = preg_replace('/(accessories)\/(.*)$/', '$1/where/category/$2', $subCategory->getUrl()); ?>   
+                  <a class="product-image" href="<?php echo $catUrl ?>"><?php echo $_imgHtml ?></a>
               <?php endif; ?>
             <h2 class="product-name">
               <a class="micros-landing-link" href="<?php echo $subCategory->getUrl(); ?>"><?php echo $subCategory->getName(); ?></a>
