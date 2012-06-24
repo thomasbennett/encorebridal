@@ -17,6 +17,7 @@
 <?php if(!empty($_filters)): ?>
 <div class="currently">
     <p class="block-subtitle"><?php echo $this->__('Currently Shopping by:') ?></p>
+    <div id="explain"></div>
     <ol>
     <?php foreach ($_filters as $_filter): ?>
     <?php if ($_html = $this->getValueHtml($_filter)) : ?>

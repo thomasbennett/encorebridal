@@ -109,4 +109,17 @@ jQuery(function($){
     $(this).next().slideDown(200);
     return false;
   });
+
+  $('span.m-selected-filter-item').live('click', function(){
+    var currentlyPos = $('.currently').offset().top;
+    $('body,html').animate({'scrollTop':currentlyPos+'px'}, 600);
+    $('#explain').show().html('Remove items from your search or clear all here.');
+   // $('#explain').delay(1200).remove();
+  });
+
+  $('.m-show-more-action').click(function(){
+    $('.m-filter-item-list').css({'height':'0'}).find('li').hide();
+    $('.m-show-less-action').hide();
+    $('.m-show-more-action').show();
+  });
 });

@@ -308,7 +308,7 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 /* Pager */
 .pager {  margin:5px 0; text-align:center; }
 .pager .amount { float:left; display: none; }
-.pager .limiter { float:right; margin: 2px 0 0 20px; }
+.pager .limiter { float:left; margin: 2px 20px 0 0; }
 .pager .pages { margin:0; padding-top: 6px; }
 .pages strong { font-weight: normal; }
 .pager .pages ol { display:inline; }
@@ -318,7 +318,7 @@ p.required { font-size:10px; text-align:right; color:#f00; }
 /* Sorter */
 .sorter { margin:5px 0; }
 .sorter .view-mode { float:left; display: none; }
-.sorter .sort-by { float:right; margin-top: -5px;}
+.sorter .sort-by { float:right;}
 .sorter .link-feed {}
 
 /* Toolbar */
