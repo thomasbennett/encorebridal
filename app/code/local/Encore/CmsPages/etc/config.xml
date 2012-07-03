@@ -8,6 +8,11 @@
      <template>page/homepage.phtml</template>
      <layout_handle>page_homepage_index</layout_handle>
     </page_homepage_index>
+    <page_about_index translate="label">
+     <label>About</label>
+     <template>page/about.phtml</template>
+     <layout_handle>page_about_index</layout_handle>
+    </page_about_index>
    </layouts>
   </page>
  </global>
