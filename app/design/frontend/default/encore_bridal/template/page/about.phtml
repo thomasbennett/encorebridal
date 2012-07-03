@@ -27,5 +27,19 @@
     </div>
 </div>
 <?php echo $this->getAbsoluteFooter() ?>
+<script>
+  jQuery(function($){
+    var titleText = $('.page-title').find('h1'); 
+    titleText.addClass('paint').css({'border-bottom':'0'});
+
+    $('#about-navigation').find('li').each(function(){
+      var navText = $('#about-navigation').find('a').text();
+
+      if(navText == titleText){
+        $(this).addClass('active-nav');
+      }
+    });
+  });
+</script>
 </body>
 </html>
