@@ -194,6 +194,9 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 #blog_post_content .meta 			{font-size: 11px; text-transform: uppercase; margin-bottom: 15px;}
 #blog_post_content .postmetadata 	{background-color: #EFEFEF; width: 100%; padding: 10px;}
 #blog_post_content { padding-right: 10px; }
+.related-posts { width: 670px; }
+.related-post {  display: inline-block; float: left; margin-right: 10px; width: 150px; }
+.related-post a { text-decoration: none; }
 
 /* COMMENTS */
 .one_comment						{margin: 10px 0 20px 0;}

@@ -34,6 +34,22 @@
 				<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
 			</div>
 
+            <?php $cat = get_the_category(); ?>
+            <?php $firstCat = $cat[0]->cat_slug; ?>
+            <?php query_posts('posts_per_page=4&category_name='.$firstCat); ?>
+            <?php if(have_posts()): ?>
+            <div class="related-posts">
+                <h3>Related Posts</h3>
+                <ul>
+                  <?php while(have_posts()): the_post(); ?>
+                    <?php the_post_thumbnail(150,150); ?>
+                    <li class="related-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                  <?php endwhile; ?>
+                </ul>
+            </div>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
+
 			<hr class="space" />
 			<hr />
 			<hr class="space" />

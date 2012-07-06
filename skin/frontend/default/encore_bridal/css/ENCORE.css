@@ -517,9 +517,9 @@ STATIC PAGES
 .consigner-testimonial strong { color: #ec4c50; }
 .cms-consignors .std li { margin-bottom: 3px; padding-left: 20px; }
 .cms-consignors .std ul { margin-bottom:20px; }
-.cms-consignors-cleaning .consignor-details { background: url('../images/consignor-detail.jpg') no-repeat; height: 270px; width: 658px; padding: 20px 30px; }
-.cms-consignors-cleaning .consignor-details li {  margin-bottom: 0; padding-left: 5px; }
-.cms-consignors-cleaning .consignor-details li strong { color: #555; margin-left: -5px; }
+.cms-consignors .consignor-details { background: url('../images/consignor-detail.jpg') no-repeat; height: 270px; width: 658px; padding: 20px 30px; }
+.cms-consignors .consignor-details li {  margin-bottom: 0; padding-left: 5px; }
+.cms-consignors .consignor-details li strong { color: #555; margin-left: -5px; }
 .cms-consignors-terms li { margin-left: 5px; margin-bottom: 5px; }
 
 .desaturated-ribbon { background: url('../images/dark-ribbon.jpg') no-repeat; padding-left: 70px; margin-top: 40px; min-height: 100px;}
@@ -529,8 +529,14 @@ STATIC PAGES
 .cms-reviews .reviews-details strong { font-size: 18px; margin-bottom: 15px; }
 
 /* active cms pages */
+.cms-about .who-we-are a,
+.cms-about-showroom .showroom a,
+.cms-about-events .events a,
+.cms-about-press .press a,
 .cms-about-beyond-bridal .beyond-bridal a,
-.cms-about-events .events a { 
+.cms-consignors-how-to-consign .how-to-consign a,
+.cms-consignors-consignment-terms .consignment-terms a
+{ 
   color: #ec4c50;
   font-size: 40px;
   font-family: "federico-web", Arial, Helvetica, sans-serif;  
