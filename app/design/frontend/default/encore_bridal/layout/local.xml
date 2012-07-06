@@ -135,4 +135,10 @@
   </reference>
 </page_about_index>
 
+<page_consigner_index>
+  <reference name="left">
+    <block type="catalog/navigation" name="catalog.consignernav" after="currency" template="catalog/navigation/consignernav.phtml"/>
+  </reference>
+</page_consigner_index>
+
 </layout>

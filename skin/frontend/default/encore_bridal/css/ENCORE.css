@@ -482,6 +482,12 @@ QUICK SEARCH layered NAVIGATION
 /* 
 STATIC PAGES
 */
+.cms-page-view .page-title { margin-top: 0; }
+.cms-page-view .page-title h1 { line-height: .7em; text-transform: lowercase; }
+.vertical-navigation a { text-decoration: none; }
+
+.action-link { background: #ec4c50; border: 6px double #fff; color: #fff !important; display: inline-block; font-weight: bold; padding: 10px; text-decoration: none !important; }
+
 /* who we are */
 .profile-image-wrapper { float: left; margin-bottom: 20px; width: 100%; }
 .profile-image-wrapper img { margin-right: 30px; }
@@ -490,3 +496,42 @@ STATIC PAGES
 .std li { margin-bottom: 10px; }
 .follow-julie { background: url('../images/follow-julie.jpg') no-repeat; height: 92px; margin-bottom: 30px; width: 372px; }
 .follow-julie ul { padding-left: 200px; }
+.follow-julie li img { margin-top: 20px; }
+
+/*beyond bridal*/
+.support-banner { background: url('../images/ribbon.jpg') no-repeat; min-height: 120px; margin-bottom: 40px; padding-left: 144px; font-size: 17px; } 
+.support-bg { background: url('../images/support.jpg') no-repeat; height: 162px; width: 493px; padding: 22px 30px; font-size: 16px; }
+
+/* events */
+.cms-about-events li { margin-bottom: 0; }
+.cms-about-events strong { font-size: 18px; }
+.cms-about-events .std { background: url('../images/event.jpg') no-repeat; padding-left: 120px;}
+
+/* showroom */
+.cms-about-showroom .std ul { margin-bottom: 20px; }
+.cms-about-showroom .std li { margin-bottom: 0; }
+.cms-about-showroom .std p { margin-bottom: 10px; }
+
+/* consignors */
+.consigner-testimonial { background: #eee; border: 6px double #fff; font-size: 12px; margin: 15px 0; padding: 10px; width: 170px; }
+.consigner-testimonial strong { color: #ec4c50; }
+.cms-consignors .std li { margin-bottom: 3px; padding-left: 20px; }
+.cms-consignors .std ul { margin-bottom:20px; }
+.cms-consignors-cleaning .consignor-details { background: url('../images/consignor-detail.jpg') no-repeat; height: 270px; width: 658px; padding: 20px 30px; }
+.cms-consignors-cleaning .consignor-details li {  margin-bottom: 0; padding-left: 5px; }
+.cms-consignors-cleaning .consignor-details li strong { color: #555; margin-left: -5px; }
+.cms-consignors-terms li { margin-left: 5px; margin-bottom: 5px; }
+
+.desaturated-ribbon { background: url('../images/dark-ribbon.jpg') no-repeat; padding-left: 70px; margin-top: 40px; min-height: 100px;}
+
+/* reviews */
+.cms-reviews .reviews-details { background: url('../images/reviews-detail.jpg') no-repeat; height: 488px; width: 622px; padding: 20px 30px; }
+.cms-reviews .reviews-details strong { font-size: 18px; margin-bottom: 15px; }
+
+/* active cms pages */
+.cms-about-beyond-bridal .beyond-bridal a,
+.cms-about-events .events a { 
+  color: #ec4c50;
+  font-size: 40px;
+  font-family: "federico-web", Arial, Helvetica, sans-serif;  
+}

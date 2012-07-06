@@ -8,11 +8,24 @@
      <template>page/homepage.phtml</template>
      <layout_handle>page_homepage_index</layout_handle>
     </page_homepage_index>
+
     <page_about_index translate="label">
      <label>About</label>
      <template>page/about.phtml</template>
      <layout_handle>page_about_index</layout_handle>
     </page_about_index>
+
+    <page_consigner_index translate="label">
+     <label>Consigner</label>
+     <template>page/consigner.phtml</template>
+     <layout_handle>page_consigner_index</layout_handle>
+    </page_consigner_index>
+
+    <page_customers_index translate="label">
+     <label>Customers</label>
+     <template>page/customers.phtml</template>
+     <layout_handle>page_customers_index</layout_handle>
+    </page_customers_index>
    </layouts>
   </page>
  </global>
