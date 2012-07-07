@@ -26,6 +26,12 @@
      <template>page/customers.phtml</template>
      <layout_handle>page_customers_index</layout_handle>
     </page_customers_index>
+
+    <page_for_brides_index>
+     <label>For Brides</label>
+     <template>page/forbrides.phtml</template>
+     <layout_handle>page_for_brides_index</layout_handle>
+    </page_for_brides_index>
    </layouts>
   </page>
  </global>

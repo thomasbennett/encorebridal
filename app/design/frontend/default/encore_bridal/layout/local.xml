@@ -56,12 +56,6 @@
         <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
     </reference>
 
-    <reference name="content">
-      <block type="catalog/product_view" name="product.info" template="catalog/product/view.phtml">
-        <block type="catalog/product_list_related" name="catalog.product.related" as="related" template="catalog/product/list/related.phtml"/>
-      </block>
-    </reference>
-
   </catalog_category_default>
 
   <catalog_category_layered>
@@ -140,5 +134,11 @@
     <block type="catalog/navigation" name="catalog.consignernav" after="currency" template="catalog/navigation/consignernav.phtml"/>
   </reference>
 </page_consigner_index>
+
+<page_for_brides_index>
+  <reference name="left">
+    <block type="catalog/navigation" name="catalog.forbridesnav" after="currency" template="catalog/navigation/forbridesnav.phtml"/>
+  </reference>
+</page_for_brides_index>
 
 </layout>
