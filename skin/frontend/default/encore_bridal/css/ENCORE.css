@@ -528,6 +528,10 @@ STATIC PAGES
 .cms-reviews .reviews-details { background: url('../images/reviews-detail.jpg') no-repeat; height: 488px; width: 622px; padding: 20px 30px; }
 .cms-reviews .reviews-details strong { font-size: 18px; margin-bottom: 15px; }
 
+/* for brides */
+.cms-for-brides-condition-guidelines .std p { clear: both; }
+.cms-for-brides-condition-guidelines .std p img { margin-top: -20px; width: 100px; }
+
 /* active cms pages */
 .cms-about .who-we-are a,
 .cms-about-showroom .showroom a,

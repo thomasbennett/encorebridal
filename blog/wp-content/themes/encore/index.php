@@ -11,8 +11,13 @@
       </div>
     </div>
     <div class="span-16" id="blog_post_content">
-    <?php get_sidebar('primary-ad') ?>
+    <?php $count = 1 ?>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+    <?php // set an ad after post 2 ?>
+    <?php if ($count == 3): ?>
+      <div class="middle-page-ad"><?php get_sidebar('primary-ad') ?></div>
+    <?php endif; ?>
 
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<?php if (has_post_thumbnail()) { ?>
@@ -40,6 +45,8 @@
 
 		</div>
 
+      <?php $count ++; ?>
+
 	<?php endwhile; ?>
 
 	<div class="span-24 last">
@@ -58,11 +65,4 @@
 
 <?php include (TEMPLATEPATH . '/inc/featured-on.php' ); ?>
 
-<script>
-  jQuery(function($){
-    var target = $('.primary-feed-ad').find('.textwidget'),
-        imgsrc = target.html();
-    target.replaceWith('<img src="'+imgsrc+'" class="primary-ad-img" />');    
-  });
-</script>
 <?php get_footer(); ?>

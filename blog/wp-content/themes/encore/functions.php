@@ -30,15 +30,15 @@
       register_sidebar(array(
     		'name' => 'Sidebar Secondary Ads',
     		'id'   => 'sidebar-ads-2',
-    		'description'   => 'These are smaller advertisements for the sidebar.',
+    		'description'   => 'These are smaller advertisements for the sidebar and everything after them.',
     		'before_widget' => '<div id="%1$s" class="widget %2$s">',
     		'after_widget'  => '</div><hr />'
     	));
 
       register_sidebar(array(
-    		'name' => 'Primary Ad',
+    		'name' => 'Middle of Page Ad',
     		'id'   => 'primary-ad',
-    		'description'   => 'Primary ad for blog feed.',
+    		'description'   => 'Ad that goes in the middle of the blog feed.',
     		'before_widget' => '<div id="%1$s" class="primary-feed-ad widget %2$s">',
     		'after_widget'  => '</div>'
     	));

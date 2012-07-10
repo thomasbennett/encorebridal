@@ -1019,14 +1019,14 @@ tr.summary-details-excluded { font-style:italic; }
 /*.product-view .product-shop .add-to-links a { color:#1E7EC8 !important; font-weight:normal !important; }*/
 
 /* Product Options */
-.product-options { margin:20px 0 0; padding:10px 15px 20px; position:relative; background-color:#f6f6f6; border:1px solid #e4e4e4; }
-.product-options dt { padding:10px 0 0; font-weight:normal; }
+.product-options { margin:20px 0 0; position:relative; clear: both; }
+.product-options dt { float: left; font-weight:normal; }
 .product-options dt label { font-weight:bold; color:#2f2f2f; }
-.product-options dt label.required em { color:#eb340a; margin-left:5px; }
+.product-options dt label.required em { color:#eb340a; }
 .product-options dd .qty-holder { display:block; padding:10px 0 0; }
 .product-options dd .qty-holder label { vertical-align:middle; }
 .product-options dt .qty-disabled { background:none; border:0; padding:3px; color:#2f2f2f; }
-.product-options dd { padding:5px 10px 15px; margin:0 0 5px; border-bottom:1px solid #e4e4e4; }
+.product-options dd { }
 .product-options dl.last dd.last { border-bottom:0; padding-bottom:5px; margin-bottom:0; }
 .product-options dd input.input-text { width:98%; }
 .product-options dd input.datetime-picker { width:150px; }
@@ -1044,13 +1044,15 @@ tr.summary-details-excluded { font-style:italic; }
 .product-options p.note { margin:0; font-size:11px; }
 .product-options p.required { position:absolute; right:20px; top:20px; }
 
-.product-options-bottom { background-color:#fffada; padding:15px 20px; border:1px solid #e4e4e4; border-top:0; }
-.product-options-bottom .tier-prices { margin:0; padding:0 0 10px; border:0; background:0; }
+.product-options-bottom { float: left; clear: both;  padding:15px 20px; }
+.product-options-bottom .tier-prices { margin:0; padding:0 0 10px; border:0; background:0; display: none; }
 .product-options-bottom .tier-prices li { background:0; padding:2px 0; color:#e26703; }
 .product-options-bottom .tier-prices .price,
 .product-options-bottom .tier-prices .benefit { color:#e26703; }
-.product-options-bottom .price-box { float:left; margin:0; padding:0; }
-.product-options-bottom .add-to-links { clear:both; padding:5px 0 0; text-align:right; }
+.product-options-bottom .price-box { float:left; margin:0; padding:0; display: none; }
+.product-options-bottom .add-to-links { float: left; padding:5px 0 0; text-align:right; }
+.product-options-bottom .add-to-links li .separator, 
+.product-options-bottom .add-to-links li .link-compare { display: none; } 
 .col3-layout .product-options-bottom .price-box { float:none; padding:0 0 5px; }
 .product-options-bottom .price-label { float:left; padding-right:5px; }
 .product-options-bottom .price-tax { float:left; }
@@ -1061,6 +1063,7 @@ tr.summary-details-excluded { font-style:italic; }
 .product-shop .product-options-bottom .price-tax { float:none; }
 .product-shop .product-options-bottom .add-to-cart-box { clear:both; float:left; padding-top:12px; }
 .product-shop .product-options-bottom .add-to-links { clear:both; padding:5px 0 0; text-align:right; }
+.
 
 /* Grouped Product */
 .product-view .grouped-items-table .price-box { margin:0; padding:0; }

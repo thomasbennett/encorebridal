@@ -197,7 +197,6 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 .related-posts { width: 670px; }
 .related-post {  display: inline-block; float: left; margin-right: 10px; width: 150px; }
 .related-post a { text-decoration: none; }
-.moretag { color: #ec4c50; text-decoration: none; margin-left: 10px; }
 
 /* COMMENTS */
 .one_comment						{margin: 10px 0 20px 0;}
@@ -229,3 +228,10 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 #more_tabs .ui-tabs-panel {padding: 0 0 0 3px !important;}
 
 .typekit-badge { display: none !important; }
+.moretag { color: #ec4c50 !important; text-decoration: none !important; margin-left: 10px; }
+.middle-page-ad { margin-bottom: 40px; }
+#facebooklikebox-2 div a { display: none; }
+#facebooklikebox-2 h2 { display: none; }
+
+.middle-page-ad { text-align: center; }
+#text-6 { margin-bottom: 40px; }
