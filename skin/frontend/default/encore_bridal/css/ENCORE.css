@@ -545,3 +545,10 @@ STATIC PAGES
   font-size: 40px;
   font-family: "federico-web", Arial, Helvetica, sans-serif;  
 }
+
+/* Consignor Form */
+.fieldset-6 li.fields { float: left; }
+.fieldset-6 .field { width: 178px; }
+.fieldset-6 .field .input-box { width: 171px; }
+.fieldset-6 .form-list input.input-text { width: 148px; }
+
