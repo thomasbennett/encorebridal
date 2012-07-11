@@ -40,10 +40,14 @@
             <?php if(have_posts()): ?>
             <div class="related-posts">
                 <h3>Related Posts</h3>
-                <ul>
+                <ul class="related-items">
                   <?php while(have_posts()): the_post(); ?>
-                    <?php the_post_thumbnail(150,150); ?>
-                    <li class="related-post"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                    <li class="related-post">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php the_post_thumbnail(array(150,150)); ?>
+                        <?php the_title(); ?>
+                      </a>
+                    </li>
                   <?php endwhile; ?>
                 </ul>
             </div>

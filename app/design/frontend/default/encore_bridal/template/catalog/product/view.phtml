@@ -57,6 +57,10 @@
             <h1 class="product_title"><?php echo $_product->getName();?></h1>
             <hr />
 
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+            <?php endif;?>
+
             <div class="large_retail">Retail: <span class="retail">$<?php echo ((int)$_product->getPrice());?><sup>00</sup></span></div>
 
             <?php if((int)$_product->getSpecialPrice() != 0) { ?>
@@ -66,7 +70,7 @@
               <div class="large_eb_cost">EB Price: $<?php echo ((int)$_product->getPrice());?><sup>00</sup></div>
               <div class="large_savings">Save: $0<sup>00</sup></div>
             <?php } ?>
-
+            
             <?php /*
             <?php if ($this->canEmailToFriend()): ?>
                 <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
@@ -177,9 +181,7 @@
         </div>
 
         <div class="clearer"></div>
-        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-        <?php endif;?>
+        
     </form>
     <script type="text/javascript">
     //<![CDATA[

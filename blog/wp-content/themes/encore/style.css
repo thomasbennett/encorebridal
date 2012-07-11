@@ -87,7 +87,7 @@ td									{border: 1px solid #FFF; text-align: center;}
 .subscribe-detail { float: left; font-family: 'proxima-nova', Arial, sans-serif; font-size: .9em; line-height: 1.1;}
 .subscribe-detail strong { font-weight: normal; font-size: 1.2em; line-height:1.6;}
 .span-6.right { width: 290px; }
-.subscribe-field { width: 210px;}
+.subscribe-field { width: 206px;}
 #sidebar h5 { font-family: 'proxima-nova', Arial, sans-serif; color: #222; font-size: 1.2em;}
 .categories li { float: left; width: 125px; margin-right: 9px; margin-bottom: 20px; height: 180px;}
 .categories a { text-transform: uppercase; text-decoration: none; }
@@ -194,8 +194,10 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 #blog_post_content .meta 			{font-size: 11px; text-transform: uppercase; margin-bottom: 15px;}
 #blog_post_content .postmetadata 	{background-color: #EFEFEF; width: 100%; padding: 10px;}
 #blog_post_content { padding-right: 10px; }
+.related-items { margin-top: 10px; }
 .related-posts { width: 670px; }
-.related-post {  display: inline-block; float: left; margin-right: 10px; width: 150px; }
+.related-post {  display: inline-block; font-size: .8em; float: left; margin-right: 10px; width: 150px; }
+.related-post img { height: 150px; }
 .related-post a { text-decoration: none; }
 
 /* COMMENTS */
