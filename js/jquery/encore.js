@@ -122,4 +122,35 @@ jQuery(function($){
     $('.m-show-less-action').hide();
     $('.m-show-more-action').show();
   });
+
+  // Style Consult Form
+    // NEXT --->
+  var fieldset = $('#webform_4_form').find('.fieldset');
+  fieldset.first().addClass('active');
+  $('#consult-next').click(function(e){
+    e.preventDefault();
+    if(fieldset.hasClass('active')){
+      t = $('.active');
+      t.hide().removeClass('active');
+      next = t.next('.fieldset');
+      next.show().addClass('active');
+      if(next.length == 0){
+        $(this).hide();
+      }
+    }
+  });
+
+      // <--- PREV
+  $('#consult-prev').click(function(e){
+    e.preventDefault();
+    if(fieldset.hasClass('active')){
+      t = $('.active');
+      t.hide().removeClass('active');
+      prev = t.prev('.fieldset');
+      prev.show().addClass('active');
+      if(next.length == 0){
+        $(this).hide();
+      }
+    }
+  });
 });

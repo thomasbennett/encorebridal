@@ -552,3 +552,7 @@ STATIC PAGES
 .fieldset-6 .field .input-box { width: 171px; }
 .fieldset-6 .form-list input.input-text { width: 148px; }
 
+/* Style Consulting Form */
+#webform_4_form .fieldset { display: none; }
+#webform_4_form .fieldset-8 { display: block; }
+#consult-prev { display: none; }

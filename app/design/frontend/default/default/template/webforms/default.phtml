@@ -79,7 +79,6 @@ if(Mage::registry('show_success')){?>
 		<h2 class="legend"><?php echo $fieldset['name']?></h2>
 		<?php	}	?>
 		
-		<ul class="form-list">
 		<?php
 		$k=0;
 		$j=0;
@@ -97,8 +96,8 @@ if(Mage::registry('show_success')){?>
 			
 		?>
 		<?php if ($j%2 ==0 || $field->getSize()=='wide' || $prev->getSize()=='wide') { $j=0;?>
-			<?php if ($k>1) {?></li><?php }?>
-			<li class="<?php echo $size_class?>">
+			<?php if ($k>0) {?></div><?php }?>
+			<div class="<?php echo $size_class?>">
 		<?php }?>
 				<div class="<?php echo $field_class?> webforms-fields-<?php echo $field->getCode()?>">
 					
@@ -127,13 +126,12 @@ if(Mage::registry('show_success')){?>
 
 				</div>
 		<?php if($k == $fields_count-1){?>
-			</li>
+			</div>
 		<?php } ?>
 		<?php 
 			$k++; $j++;
 			$prev = $field;
 		}?>
-		</ul>
 		
 	</div>
 	
