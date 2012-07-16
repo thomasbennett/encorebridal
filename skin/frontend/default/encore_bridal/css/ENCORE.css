@@ -552,6 +552,16 @@ STATIC PAGES
   font-family: "federico-web", Arial, Helvetica, sans-serif;  
 }
 
+/* Contact Us */
+.contact-nav li { border-right: 1px solid #ec4c50; display: inline-block; float: left; min-height: 110px; padding: 0 4%; width: 26%; }
+.contact-nav li.last { border: 0; padding-right: 0; }
+.contact-info li { border-top: 1px solid #8acede; height: 75px; margin: 5px 0; padding: 5px 0 5px 90px; width: 100%; }
+.contact-info .email { background: url('../images/mail.jpg') no-repeat; }
+.contact-info .call { background: url('../images/phone.jpg') no-repeat; }
+.contact-info .ship { background: url('../images/truck.jpg') no-repeat; }
+.contact-info .pin { background: url('../images/pin.jpg') no-repeat; }
+
+
 /* Consignor Form */
 .fieldset-6 li.fields { float: left; }
 .fieldset-6 .field { width: 178px; }

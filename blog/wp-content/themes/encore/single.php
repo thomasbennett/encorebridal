@@ -35,8 +35,8 @@
 			</div>
 
             <?php $cat = get_the_category(); ?>
-            <?php $firstCat = $cat[0]->cat_slug; ?>
-            <?php query_posts('posts_per_page=4&category_name='.$firstCat); ?>
+            <?php $firstCat = $cat[0]->cat_ID; ?>
+            <?php query_posts('posts_per_page=4&cat='.$firstCat); ?>
             <?php if(have_posts()): ?>
             <div class="related-posts">
                 <h3>Related Posts</h3>
@@ -57,6 +57,14 @@
 			<hr class="space" />
 			<hr />
 			<hr class="space" />
+
+      <div class="left"><?php previous_post('&laquo; %', '', 'yes'); ?></div>
+      <div class="right"><?php next_post('% &raquo; ', '', 'yes'); ?></div>
+
+			<hr class="space" />
+      <hr />
+			<hr class="space" />
+
 
 			<?php comments_template(); ?>
 
