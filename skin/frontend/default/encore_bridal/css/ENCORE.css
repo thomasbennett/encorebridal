@@ -491,7 +491,7 @@ STATIC PAGES
 /* who we are */
 .profile-image-wrapper { float: left; margin-bottom: 20px; width: 100%; }
 .profile-image-wrapper img { margin-right: 30px; }
-.profile-image-wrapper h2 { color: #ec4c50; margin-bottom: 10px; margin-top: 60px; text-transform: lowercase; }
+.profile-image-wrapper h2 { color: #ec4c50; margin-bottom: 30px; margin-top: 60px; text-transform: lowercase; }
 .std strong { color: #ec4c50; }
 .std li { margin-bottom: 10px; }
 .follow-julie { background: url('../images/follow-julie.jpg') no-repeat; height: 92px; margin-bottom: 30px; width: 372px; }
