@@ -212,7 +212,7 @@ a.more:hover						{color: #000;}
 .breadcrumbs a:active				{text-decoration: none;}
 .breadcrumbs a:hover				{text-decoration: underline;}
 
-.paint								{background: url('../images/bg_h2.png') left top no-repeat; min-width: 292px; height: 40px; padding-left: 35px; position: relative; left: -35px; padding-top: 20px;}
+.paint								{background: url('../images/bg_h2.png') left top no-repeat; min-width: 292px; margin-bottom: 20px; height: 40px; padding-left: 35px; position: relative; left: -35px; padding-top: 20px;}
 
 
 /* ==== PAGE STYLES =========================================== */
