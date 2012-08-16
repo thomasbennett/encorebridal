@@ -9,7 +9,7 @@ a:hover								{text-decoration: none; color: #5e5e5f;}
 
 h1									{font-family: "proxima-nova", Arial, Helvetica; color: #666; font-size: 20px; text-transform: uppercase; font-weight: bold;}
 h2									{font-family: "federico-web", Arial, Helvetica, sans-serif; font-size: 48px; color: #5E5E5F; padding: 0; margin: 0; font-weight: normal; line-height: 28px;}
-h3									{font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; color: #fb4949; font-weight: bold; font-size: 18px; margin: 0; padding: 0;}
+h3									{font-family: "proxima-nova", Arial, Helvetica, sans-serif; text-transform: uppercase; color: #fb4949; font-weight: bold; font-size: 18px; margin: 0; margin-bottom: 5px; padding: 0;}
 h3 a:link,
 h3 a:visited,
 h3 a:active							{color: #fb4949; text-decoration: none;}
@@ -63,15 +63,12 @@ font-weight: bold;
 	
 }
 .page-title {
-	height: 70px;
 	margin: 30px 0 0;
 }
 .page-title h1 {
 	display: block;
-	font-family: "federico-web", Arial, Helvetica, sans-serif; font-size: 48px; color: #5E5E5F;
+	font-family: "proxima-nova", Arial, Helvetica, sans-serif; font-size: 23px; color: #fb4949;
 	font-weight: normal;
-	height: 60px;
-	text-transform: none;
 }
 
 .page-title ul.checkout-types {
@@ -212,11 +209,12 @@ a.more:hover						{color: #000;}
 .breadcrumbs a:active				{text-decoration: none;}
 .breadcrumbs a:hover				{text-decoration: underline;}
 
-.paint								{background: url('../images/bg_h2.png') left top no-repeat; min-width: 292px; margin-bottom: 20px; height: 40px; padding-left: 35px; position: relative; left: -35px; padding-top: 20px;}
+.paint								{background: url('../images/bg_h2.png') left top no-repeat; min-width: 292px; height: 40px; padding-left: 35px; position: relative; left: -35px; padding-top: 20px; font-family: 'federico-web' !important; font-size: 48px !important; color: #555 !important }
 
 
 /* ==== PAGE STYLES =========================================== */
 /* HOME */
+#slide-container { height: 515px; }
 #slider								{width: 950px; height: 430px; position: relative;}
 #slider_navigation 					{position: absolute; bottom: 10px; right: 10px;}
 .slider_item						{background: url('../images/slider_nav.png') left top no-repeat; width: 11px; height: 10px; float: left; margin-right: 5px;}
@@ -242,7 +240,6 @@ body#home .small_box_2				{padding: 20px 30px; width: 172px; height: 43px;}
 #heading_new_products				{top: -30px; margin-bottom: -25px;}
 .products-grid .item						{background: url('../images/bg_gray_box.jpg') left top repeat; width: 299px; height: auto; border: 1px solid #dfdfdf; padding: 3px;}
 .product_details					{ border: 1px solid #dfdfdf; padding: 10px;height:120px;}
->>>>>>> origin/master
 
 
 /* DRESSES */
@@ -355,6 +352,7 @@ CONTENT PAGE WITH LEFT SIDEBAR
 
 .left_sidebar a {text-decoration: none; text-transform: uppercase}
 .left_sidebar a.current_link {color: #FB4949}
+.sidebar img { width: 200px; margin-bottom: 20px; }
 
 .content_page
 {
@@ -391,7 +389,7 @@ h2.product-name     {font-family: "proxima-nova", Arial, Helvetica; color: #666;
 LOGIN / REGISTER PAGE
 */
 
-#login-form .content h2 {text-transform: uppercase;}
+#login-form .content h2 {font-family: 'proxima-nova'; color: #fb4949; text-transform: uppercase;}
 #login-form button {background: #fb4949; font-weight: bold; font-family: "proxima-nova", Arial, Helvetica, sans-serif; color: #FFF; padding: 5px 10px !important; border: 4px double #FFF; cursor: pointer; text-transform: uppercase;}
 #login-form button:hover {background: black;}
 
@@ -484,7 +482,7 @@ STATIC PAGES
 */
 .cms-page-view .page-title { margin-top: 0; }
 .cms-page-view .page-title h1 { line-height: .7em; text-transform: lowercase; }
-.vertical-navigation a { text-decoration: none; }
+.vertical-navigation a { font-family: 'proxima-nova', arial; text-decoration: none; }
 
 .action-link { background: #ec4c50; border: 6px double #fff; color: #fff !important; display: inline-block; font-weight: bold; padding: 10px; text-decoration: none !important; }
 
@@ -539,7 +537,14 @@ STATIC PAGES
 /* perferred vendors */
 .cms-for-brides-preferred-vendors .std img { border-bottom: 2px dotted #ddd; clear: both; float: left; padding-bottom: 10px; margin-bottom: 10px;  max-width: 50%; }
 
+/* faq */
+.cms-customers-faqs strong a { color: #ec4c50; display: block; margin-top: 40px; text-decoration: none; text-transform: uppercase; }
+.cms-customers-faqs h2 { margin-top: 40px; margin-bottom: 10px;}
+.cms-customers-faqs ol li { margin-bottom: 5px; }
+.bulleted li { list-style-type: square; margin-left: 15px; }
+
 /* active cms pages */
+/*
 .cms-about .who-we-are a,
 .cms-about-showroom .showroom a,
 .cms-about-events .events a,
@@ -551,24 +556,50 @@ STATIC PAGES
   font-size: 40px;
   font-family: "federico-web", Arial, Helvetica, sans-serif;  
 }
+*/
 
 /* Contact Us */
 .contact-nav li { border-right: 1px solid #ec4c50; display: inline-block; float: left; min-height: 110px; padding: 0 4%; width: 26%; }
 .contact-nav li.last { border: 0; padding-right: 0; }
-.contact-info li { border-top: 1px solid #8acede; height: 75px; margin: 5px 0; padding: 5px 0 5px 90px; width: 100%; }
-.contact-info .email { background: url('../images/mail.jpg') no-repeat; }
-.contact-info .call { background: url('../images/phone.jpg') no-repeat; }
-.contact-info .ship { background: url('../images/truck.jpg') no-repeat; }
-.contact-info .pin { background: url('../images/pin.jpg') no-repeat; }
+.contact-info { clear: both; }
+.contact-info li { border-top: 1px solid #8acede; height: 40px; margin: 5px 0; padding: 25px 0 5px 90px; width: 620px; }
+.contact-info .email { background: url('../images/mail.jpg') 10px 17px no-repeat; }
+.contact-info .call { background: url('../images/phone.jpg') 10px 17px no-repeat; }
+.contact-info .ship { background: url('../images/truck.jpg') 10px 17px no-repeat; }
+.contact-info .pin { background: url('../images/pin.jpg') 10px 17px no-repeat; }
 
 
 /* Consignor Form */
-.fieldset-6 li.fields { float: left; }
-.fieldset-6 .field { width: 178px; }
-.fieldset-6 .field .input-box { width: 171px; }
-.fieldset-6 .form-list input.input-text { width: 148px; }
+#webform_3_form .fieldset-6 li.fields { float: left; }
+#webform_3_form .fieldset-6 .field { width: 178px; }
+#webform_3_form .fieldset-6 .field .input-box { width: 171px; }
+#webform_3_form .fieldset-6 .form-list input.input-text { width: 148px; }
+#webform_3_form .fieldset-6 .fields { float: left; }
+#webform_3_form .fieldset-6 .fields input { width: 145px; }
+#webform_3_form .fieldset-7 { clear: both; }
 
 /* Style Consulting Form */
+#webform_4_form { position: relative; }
 #webform_4_form .fieldset { display: none; }
 #webform_4_form .fieldset-8 { display: block; }
+#webform_4_form #consult-next, #webform_4_form #consult-prev { position: absolute; bottom: -10px; }
+#webform_4_form #consult-next { right: 600px; }
+#webform_4_form #consult-prev { left: 0; }
 #consult-prev { display: none; }
+#field[61] { border: 1px solid #ccc; } 
+#webform_4_form textarea { height: 120px; }
+#webform_3_form .field > label, #webform_4_form .field > label { font-weight: bold; display: inline-block; margin-top: 20px; }
+#webform_4_form h2.legend { font-family: 'proxima-nova'; color: #ec4c50; font-size: 20px; }
+#consult-prev, #consult-next { background: #ec4c50; color: #fff; padding: 5px 10px; border-radius: 5px; text-decoration: none; }
+#webform_4_form .button { display: none; }
+
+#webform_3_form h2.legend { display: none; font-family: "proxima-nova", Arial, Helvetica; color: #ec4c50; font-size: 20px; font-weight: bold; margin-top: 10px; }
+.webforms-fields-comment { float: none !important; }
+
+label em { color: red; font-weight: bold; }
+
+.cms-customers-privacy-policy .std ul {  margin-bottom: 10px; }
+.cms-customers-privacy-policy .std li {  margin-bottom: 2px; list-style: square; margin-left: 20px; }
+
+.sidebar h3 { font-family: 'federico-web', Arial, Helvetica; text-transform: none; font-size: 30px; margin-top: 10px; margin-bottom: 0; }
+.sidebar .small_box_2 h3 { font-family: 'proxima-nova'; font-size: 19px; text-transform: uppercase; }

@@ -122,9 +122,7 @@
               </ul>
               <div id="product_detail_tabs-1"><?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), nl2br($this->getProduct()->getDescription()), 'description')?></div>
               <div id="product_detail_tabs-2">
-                  <?php /*<span class="product_height">Height: </span>
-                  <?php echo $_product->getAttributeText('height'); ?> */ ?>
-                  <?php echo $_product->getAttributeText('size_fit_info'); ?>
+                  <?php echo $_product->getsize_fit_info(); ?>
               </div>
               <div id="product_detail_tabs-3">
                 <?php 

@@ -59,7 +59,9 @@
       <div class="span-24 last">
         <?php echo $this->getChildHtml('header') ?>
         <?php if($routeName == 'cms' && $identifier == 'home') { ?>
-            <?php echo $this->getChildHtml('slider') ?>
+            <div id="slide-container">
+              <?php echo $this->getChildHtml('slider') ?>
+            </div>
             <?php echo $this->getChildHtml('boxes') ?>
             <?php echo $this->getChildHtml('newproducts') ?>
             <?php echo $this->getChildHtml('featuredon') ?>

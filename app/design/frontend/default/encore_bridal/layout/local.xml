@@ -110,6 +110,9 @@
     <reference name="content">
         <block type="newitems/newitems" name="newitems" template="newitems/newitems.phtml" />
     </reference>
+    <reference name="left">
+      <block type="catalog/navigation" name="catalog.vertnav" after="currency" template="catalog/navigation/vertnav.phtml"/>
+    </reference>
 </newitems_index_index>
     
 <microcollections_index_index>
@@ -140,5 +143,11 @@
     <block type="catalog/navigation" name="catalog.forbridesnav" after="currency" template="catalog/navigation/forbridesnav.phtml"/>
   </reference>
 </page_for_brides_index>
+
+<page_customers_index>
+  <reference name="left">
+    <block type="catalog/navigation" name="catalog.customernav" after="currency" template="catalog/navigation/customernav.phtml"/>
+  </reference>
+</page_customers_index>
 
 </layout>

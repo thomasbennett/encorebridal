@@ -45,18 +45,21 @@
 
 	<div class="container">
 	<div class="span-24 last">
-            <?php echo $this->getChildHtml('header') ?>
-            <hr/>
-            <?php /*echo $this->getChildHtml('breadcrumbs')*/ ?>
-            <!--<div class="left_sidebar">
-            <?php echo $this->getChildHtml('left') ?>
-            </div>-->
-            <?php echo $this->getChildHtml('content') ?>
-            <br style="clear: both"/>
-            <hr class="one_dotted_hr"/>
-            <?php echo $this->getChildHtml('footer') ?>
-            <?php echo $this->getChildHtml('copyright') ?>    
-        </div>
+    <?php echo $this->getChildHtml('header') ?>
+    <hr/>
+      <div class="col-left sidebar">
+          <?php echo $this->getChildHtml('left') ?>
+      </div>
+
+      <div class="col-main">
+        <?php echo $this->getChildHtml('global_messages') ?>
+        <?php echo $this->getChildHtml('content') ?>
+      </div>
+      <br style="clear: both"/>
+      <hr class="one_dotted_hr"/>
+      <?php echo $this->getChildHtml('footer') ?>
+      <?php echo $this->getChildHtml('copyright') ?>    
+    </div>
 	</div>
 </div>
 </div>

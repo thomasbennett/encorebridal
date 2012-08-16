@@ -127,30 +127,37 @@ jQuery(function($){
     // NEXT --->
   var fieldset = $('#webform_4_form').find('.fieldset');
   fieldset.first().addClass('active');
+  var active = $('.active');
   $('#consult-next').click(function(e){
-    e.preventDefault();
-    if(fieldset.hasClass('active')){
-      t = $('.active');
-      t.hide().removeClass('active');
-      next = t.next('.fieldset');
-      next.show().addClass('active');
-      if(next.length == 0){
-        $(this).hide();
-      }
+  console.log(active.index());
+    $('#consult-prev').show();
+    if(active.next('.fieldset').index() !== 4){
+      var next = $('.active').next('.fieldset');
+      next.show().addClass('active').prev().hide().removeClass('active');
     }
+    if(fieldset.last().hasClass('active')){
+      $('#consult-next').hide();
+      $('.buttons-set').show();
+    }
+    scrollTop();
+    e.preventDefault();
   });
 
       // <--- PREV
   $('#consult-prev').click(function(e){
-    e.preventDefault();
-    if(fieldset.hasClass('active')){
-      t = $('.active');
-      t.hide().removeClass('active');
-      prev = t.prev('.fieldset');
-      prev.show().addClass('active');
-      if(next.length == 0){
-        $(this).hide();
-      }
+    $('#consult-next').show();
+    if(active.prev('.fieldset').index() !== 1){
+      var prev = $('.active').prev('.fieldset');
+      prev.show().addClass('active').next().hide().removeClass('active');
     }
+    if(fieldset.first().hasClass('active')){
+      $('#consult-prev').hide();
+    }
+    scrollTop();
+    e.preventDefault();
   });
+
+  function scrollTop() {
+    $('html, body').animate({ 'scrollTop' : 0 }, 400);
+  }
 });
