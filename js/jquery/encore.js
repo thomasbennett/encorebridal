@@ -136,7 +136,7 @@ jQuery(function($){
     }
     if(fieldset.last().hasClass('active')){
       $('#consult-next').hide();
-      $('.buttons-set').show();
+      $('#webform_4_form .button').show();
     }
     scrollTop();
     e.preventDefault();

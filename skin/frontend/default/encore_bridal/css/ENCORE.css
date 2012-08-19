@@ -577,6 +577,7 @@ STATIC PAGES
 #webform_3_form .fieldset-6 .fields { float: left; }
 #webform_3_form .fieldset-6 .fields input { width: 145px; }
 #webform_3_form .fieldset-7 { clear: both; }
+#webform_3_form textarea { height: 80px; width: 215px; }
 
 /* Style Consulting Form */
 #webform_4_form { position: relative; }
@@ -587,7 +588,7 @@ STATIC PAGES
 #webform_4_form #consult-prev { left: 0; }
 #consult-prev { display: none; }
 #field[61] { border: 1px solid #ccc; } 
-#webform_4_form textarea { height: 120px; }
+#webform_4_form textarea { height: 80px; width: 215px; }
 #webform_3_form .field > label, #webform_4_form .field > label { font-weight: bold; display: inline-block; margin-top: 20px; }
 #webform_4_form h2.legend { font-family: 'proxima-nova'; color: #ec4c50; font-size: 20px; }
 #consult-prev, #consult-next { background: #ec4c50; color: #fff; padding: 5px 10px; border-radius: 5px; text-decoration: none; }
@@ -603,3 +604,5 @@ label em { color: red; font-weight: bold; }
 
 .sidebar h3 { font-family: 'federico-web', Arial, Helvetica; text-transform: none; font-size: 30px; margin-top: 10px; margin-bottom: 0; }
 .sidebar .small_box_2 h3 { font-family: 'proxima-nova'; font-size: 19px; text-transform: uppercase; }
+
+.highlight .webforms-calendar input, .webforms-calendar input { border: 1px solid #ccc; }
