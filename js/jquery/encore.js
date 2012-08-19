@@ -129,7 +129,6 @@ jQuery(function($){
   fieldset.first().addClass('active');
   var active = $('.active');
   $('#consult-next').click(function(e){
-  console.log(active.index());
     $('#consult-prev').show();
     if(active.next('.fieldset').index() !== 4){
       var next = $('.active').next('.fieldset');
