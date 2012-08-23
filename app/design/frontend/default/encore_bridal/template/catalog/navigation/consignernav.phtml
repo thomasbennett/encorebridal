@@ -1,4 +1,3 @@
-<h3>More Information</h3>
 <ul id="consigner-navigation" class="vertical-navigation">
   <li class="how-to-consign"><a href="/consignors/how-to-consign">how to consign</a></li>
   <li class="consignment-terms"><a href="/consignors/terms">consignment terms & conditions</a></li>
@@ -6,5 +5,20 @@
 </ul>
 
 <div class="consigner-testimonial">
-  "After months without any success, I was fortunate to discover Encore Bridal's ad and contacted the owner, Julie. Her professional and prompt responses to my many questions put my fears to rest about sending such a valuable dress to someone I had never met. Encore's excellent marketing of my daughter's dress resulted in it being sold within two months. <strong>I would highly recommend Julie and Encore Bridal to anyone</strong> hoping to sell, or get a great deal on, a new or nearly new wedding gown." —Review by Lynn L. on Wedding Wire 
+    <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
+    <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
+    <?php $testimonials = $collection->load(); ?>
+    <?php $i = 0;?>
+    <?php if ($testimonials->count() > 0): ?>
+    <?php foreach ($testimonials as $testimonial): ?>
+        <?php if($i <= 1): ?>
+        <div class="review">
+            <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
+            <?php echo $testimonial->getTestimonialText(); ?>
+        </div>
+        <?php endif; ?>
+        <?php $i++; ?>
+    <?php endforeach; ?>
+
+    <?php endif;?>
 </div>

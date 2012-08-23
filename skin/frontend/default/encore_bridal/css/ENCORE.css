@@ -141,6 +141,7 @@ body#accessories #navigation ul li.accessories a,
 body#dresses #navigation ul li.dresses a,
 body.category-dresses #navigation ul li.dresses a,
 body.category-accessories #navigation ul li.accessories a,
+body.cms-for-brides #navigation ul li.for_brides a,
 body#home #navigation ul li.home a 	{font-family: "federico-web"; color: #fb4949; text-transform: lowercase !important; padding: 0; margin: 0; line-height: 12px; font-size: 45px;}
 #checkout .page-title { margin-top: 0; }
 #checkout .page-title h1 { line-height: 2em; }
@@ -528,9 +529,9 @@ STATIC PAGES
 .desaturated-ribbon { background: url('../images/dark-ribbon.jpg') no-repeat; padding-left: 70px; margin-top: 40px; min-height: 100px;}
 
 /* reviews */
-.cms-reviews #reviews-details { background: url('../images/reviews-detail.jpg') no-repeat; margin-bottom: 40px; height: 448px; width: 663px; padding: 20px 0; }
-.cms-reviews #reviews-details h2 { margin: 15px 0; padding-left: 30px;}
-.cms-reviews #reviews-details .review { background: url('../images/review-bg.jpg') repeat-y; padding: 0 30px; width: 599px; margin-left: 3px;  }
+#reviews-details { background: url('../images/reviews-detail.jpg') no-repeat; margin-bottom: 40px; height: 448px; width: 663px; padding: 20px 0; }
+#reviews-details h2 { margin: 15px 0 !important; padding-left: 30px !important;}
+#reviews-details .review { background: url('../images/review-bg.jpg') repeat-y; padding: 0 30px; width: 599px; margin-left: 3px;  }
 
 /* for brides */
 .cms-for-brides-condition-guidelines .std p { clear: both; }
