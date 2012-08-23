@@ -528,9 +528,9 @@ STATIC PAGES
 .desaturated-ribbon { background: url('../images/dark-ribbon.jpg') no-repeat; padding-left: 70px; margin-top: 40px; min-height: 100px;}
 
 /* reviews */
-.cms-reviews #reviews-details { background: url('../images/reviews-detail.jpg') no-repeat; height: 488px; width: 622px; padding: 20px 30px; }
-.cms-reviews #reviews-details strong { font-size: 18px; margin-bottom: 15px; }
-.cms-reviews #reviews-details .review { }
+.cms-reviews #reviews-details { background: url('../images/reviews-detail.jpg') no-repeat; margin-bottom: 40px; height: 448px; width: 663px; padding: 20px 0; }
+.cms-reviews #reviews-details h2 { margin: 15px 0; padding-left: 30px;}
+.cms-reviews #reviews-details .review { background: url('../images/review-bg.jpg') repeat-y; padding: 0 30px; width: 599px; margin-left: 3px;  }
 
 /* for brides */
 .cms-for-brides-condition-guidelines .std p { clear: both; }

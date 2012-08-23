@@ -17,6 +17,7 @@
                     <?php echo $this->getChildHtml('content') ?>
 
                     <div id="reviews-details">
+                        <h2>Reviews</h2>
                         <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
                         <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
                         <?php $testimonials = $collection->load(); ?>
@@ -24,7 +25,7 @@
                         <?php if ($testimonials->count() > 0): ?>
                         <?php foreach ($testimonials as $testimonial): ?>
                             <div class="review">
-                                <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
+                                <h3><?php echo $testimonial->getTestimonialName(); ?></h3>
                                 <?php echo $testimonial->getTestimonialText(); ?>
                             </div>
                         <?php endforeach; ?>
@@ -49,16 +50,6 @@
     </div>
 </div>
 <?php echo $this->getAbsoluteFooter() ?>
-
-<script>
-    jQuery(function($){
-        $('#review-details').cycle({
-            fx: 'scrollHorz',
-            timeout: 5000,
-            speed: 300
-        });
-    });
-</script>
 
 </body>
 </html>
