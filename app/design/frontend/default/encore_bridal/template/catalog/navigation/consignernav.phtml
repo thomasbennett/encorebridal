@@ -4,6 +4,7 @@
   <li class="reviews"><a href="/reviews">reviews</a></li>
 </ul>
 
+
 <div class="consigner-testimonial">
     <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
     <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
@@ -11,12 +12,11 @@
     <?php $i = 0;?>
     <?php if ($testimonials->count() > 0): ?>
     <?php foreach ($testimonials as $testimonial): ?>
-        <?php if($i <= 1): ?>
+        <?php if ($i == 1) break; ?>
         <div class="review">
             <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
             <?php echo $testimonial->getTestimonialText(); ?>
         </div>
-        <?php endif; ?>
         <?php $i++; ?>
     <?php endforeach; ?>
 

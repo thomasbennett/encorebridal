@@ -1,10 +1,9 @@
-<h3>More Information</h3>
 <ul id="for-brides-navigation" class="vertical-navigation">
   <li><a href="/for_brides/shipping_info/">Shipping info</a></li>
   <li><a href="/for_brides/return_policy/">Return Policy</a></li>
   <li><a href="/for_brides/alterations/">Alterations</a></li>
   <li><a href="/for_brides/layaway/">Layaway</a></li>
-  <li><a href="/for_brides/condition_guidelines/">Condition Guidelines</a></li>
+  <li><a href="/for_brides/condition_guidelines/">Inspection Process & Our Promise</a></li>
   <li><a href="/for_brides/preferred_vendors/">Preferred Vendors</a></li>
   <li class="reviews"><a href="/reviews">Reviews</a></li>
   <li><a href="/webforms/index/index/id/4/">Virtual Stylist</a></li>				
@@ -17,12 +16,11 @@
     <?php $i = 0;?>
     <?php if ($testimonials->count() > 0): ?>
     <?php foreach ($testimonials as $testimonial): ?>
-        <?php if($i <= 1): ?>
+        <?php if ($i == 1) break; ?>
         <div class="review">
             <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
             <?php echo $testimonial->getTestimonialText(); ?>
         </div>
-        <?php endif; ?>
         <?php $i++; ?>
     <?php endforeach; ?>
 
