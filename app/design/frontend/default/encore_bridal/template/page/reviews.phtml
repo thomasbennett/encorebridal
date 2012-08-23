@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div id="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        <div class="main-container col2-left-layout">
+            <div class="main">
+                <?php echo $this->getChildHtml('breadcrumbs') ?>
+                <div class="col-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
+
+                    <div id="reviews-details">
+                        <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
+                        <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
+                        <?php $testimonials = $collection->load(); ?>
+                        <?php $i = 0;?>
+                        <?php if ($testimonials->count() > 0): ?>
+                        <?php foreach ($testimonials as $testimonial): ?>
+                            <div class="review">
+                                <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
+                                <?php echo $testimonial->getTestimonialText(); ?>
+                            </div>
+                        <?php endforeach; ?>
+
+                        <?php endif;?>
+                    </div>
+
+                    <div class="recommended-by">
+                        <p>Recommended by:</p>
+                        <p><img src="/media/wysiwyg/logos.jpg" alt="logos" /></p>
+                    </div>
+
+                </div>
+                <div class="col-left sidebar">
+                    <?php echo $this->getChildHtml('left') ?>
+                </div>
+            </div>
+        </div>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('copyright') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+
+<script>
+    jQuery(function($){
+        $('#review-details').cycle({
+            fx: 'scrollHorz',
+            timeout: 5000,
+            speed: 300
+        });
+    });
+</script>
+
+</body>
+</html>
+

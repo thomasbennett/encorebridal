@@ -63,19 +63,30 @@
                 
 		<div class="span-8 last">
 			<div id="testimonial_box">
-                                <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
-                                <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
-                                <?php $testimonials = $collection->load(); ?>
-                                <?php $i = 0;?>
-                                <?php if ($testimonials->count() > 0): ?>
-                                <?php   foreach ($testimonials as $testimonial): ?>
-                                    <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
-                                    <?php echo $testimonial->getTestimonialText(); ?>
-                                    <div class="right"></div>
-                                <?php   endforeach; ?>
+                <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
+                <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
+                <?php $testimonials = $collection->load(); ?>
+                <?php $i = 0;?>
+                <?php if ($testimonials->count() > 0): ?>
+                <?php foreach ($testimonials as $testimonial): ?>
+                    <div class="testimonial">
+                        <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
+                        <?php echo $testimonial->getTestimonialText(); ?>
+                    </div>
+                <?php endforeach; ?>
 
-                                <?php endif;?>
+                <?php endif;?>
 			</div>
 		</div>
 
 		<hr class="space" />
+
+        <script>
+            jQuery(function($){
+                $('#testimonial_box').cycle({
+                    fx: 'scrollVert',
+                    timeout: 5000,
+                    speed: 300
+                });
+            });
+        </script>
