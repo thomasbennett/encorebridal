@@ -60,6 +60,13 @@
   </catalog_category_default>
 
   <catalog_category_layered>
+    <reference name="root">
+        <action method="setTemplate">
+            <template>page/2columns-left.phtml</template>
+        </action>
+        <block type="page/html" name="copyright" as="copyright" template="page/html/copyright.phtml"/>
+    </reference> 
+
     <reference name="left">
         <block type="catalog/navigation" name="catalog.leftnav" after="currency" template="catalog/navigation/left.phtml"/>
     </reference>

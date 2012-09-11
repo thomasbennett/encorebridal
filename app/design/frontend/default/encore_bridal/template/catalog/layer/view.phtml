@@ -45,9 +45,9 @@
             <p class="block-subtitle"><?php echo $this->__('Quick Search') ?></p>
 
             <hr>
-            <a href="/newitems" class="more">New Arrivals</a><br />
-            <a href="/accessories/cheap-bridal-accessories.html" class="more">$1,000 or Less</a><br />
-            <a href="/accessories/popular-bridal-accessories-sold.html" class="more">Recently Sold</a>
+            <a href="/dresses/new-arrivals.html" class="more">New Arrivals</a><br />
+            <a href="/cheap-wedding-dresses.html" class="more">$1,000 or Less</a><br />
+            <a href="/recently-sold.html" class="more">Recently Sold</a>
             <hr>
 
             <dl id="narrow-by-list">
@@ -67,6 +67,7 @@
 <script>
   (function($){
     $('.m-more-less').parent().addClass('relative');
+    $('#m-more-less-category').parent().hide().prev().hide();
   })(jQuery);
 </script>
 <?php endif; ?>

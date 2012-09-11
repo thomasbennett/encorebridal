@@ -159,7 +159,7 @@
               <a class="addthis_button_google_plusone" g:plusone:size="medium" style="width: 71px;"></a>
               <a class="addthis_counter addthis_pill_style" style="width: 57px;"></a>
                                      
-              <a href="http://pinterest.com/pin/create/button/?url=<?php echo $url;?>" style="width:50px;" class="pin-it-button" count-layout="horizontal">Pin It</a>
+              <a href="http://pinterest.com/pin/create/button/?url=<?php echo $url;?>&media=<?php //echo $this->helper('catalog/images')->init($_product, 'image'); ?>" style="width:50px;" class="pin-it-button" count-layout="horizontal">Pin It</a>
               <script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
             </div>
             <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4ec1288610fe69e0"></script>
@@ -246,21 +246,23 @@
 		</div>
 
     <div id="testimonial_box" class="right">
-      <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
-      <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
-      <?php $testimonials = $collection->load(); ?>
-      <?php $i = 0;?>
-      <?php if ($testimonials->count() > 0): ?>
-      <?php foreach ($testimonials as $testimonial): ?>
-        <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
-        <?php echo $testimonial->getTestimonialText(); ?>
-        <div class="right"></div>
-      <?php endforeach; ?>
+        <?php $collection = Mage::getModel("testimonial/testimonial")->getCollection(); ?>
+        <?php $collection->setOrder('testimonial_position', 'ASC'); ?>
+        <?php $testimonials = $collection->load(); ?>
+        <?php $i = 0;?>
+        <?php if ($testimonials->count() > 0): ?>
+        <?php foreach ($testimonials as $testimonial): ?>
+            <div class="testimonial">
+                <h5><?php echo $testimonial->getTestimonialName(); ?></h5>
+                <?php echo $testimonial->getTestimonialText(); ?>
+            </div>
+        <?php endforeach; ?>
 
-      <?php endif;?>
+        <?php endif;?>
     </div>
-
+    <!--<a class="read-more-review" href="/reviews">Read More</a>    -->
     <div class="clearer"></div>
+
     <?php   /*
     <div class="product-collateral">
     <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
@@ -278,10 +280,18 @@
 
 <script type="text/javascript">
 jQuery(function($) {
+    console.log('<?php echo $url ?>');
+
     $('#product_detail_tabs').tabs();
     $('#more_tabs').tabs();
     $('.link-wishlist').text('Add to Dressing Room');
 
     $('.zoom-desc').find('p').find('a').first().hide();
+
+    $('#testimonial_box').cycle({
+        fx: 'scrollVert',
+        timeout: 9000,
+        speed: 300
+    });
 });
 </script>
