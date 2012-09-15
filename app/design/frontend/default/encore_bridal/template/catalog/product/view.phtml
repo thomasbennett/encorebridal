@@ -61,14 +61,14 @@
                 <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
             <?php endif;?>
 
-            <div class="large_retail">Retail: <span class="retail">$<?php echo ((int)$_product->getPrice());?><sup>00</sup></span></div>
+            <div class="large_retail">Retail: <span class="retail">$<?php echo ((int)$_product->getPrice());?></span></div>
 
             <?php if((int)$_product->getSpecialPrice() != 0) { ?>
-              <div class="large_eb_cost">EB Price: $<?php echo ((int)$_product->getSpecialPrice());?><sup>00</sup></div>
-              <div class="large_savings">Save: $<?php echo ((int)$_product->getPrice() - (int)$_product->getSpecialPrice());?><sup>00</sup></div>
+              <div class="large_eb_cost">EB Price: $<?php echo ((int)$_product->getSpecialPrice());?></div>
+              <div class="large_savings">Save: $<?php echo ((int)$_product->getPrice() - (int)$_product->getSpecialPrice());?></div>
             <?php } else { ?>
-              <div class="large_eb_cost">EB Price: $<?php echo ((int)$_product->getPrice());?><sup>00</sup></div>
-              <div class="large_savings">Save: $0<sup>00</sup></div>
+              <div class="large_eb_cost">EB Price: $<?php echo ((int)$_product->getPrice());?></div>
+              <div class="large_savings">Save: $0</div>
             <?php } ?>
             
             <?php /*

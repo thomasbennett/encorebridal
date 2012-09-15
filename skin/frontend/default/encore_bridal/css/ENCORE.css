@@ -468,7 +468,7 @@ QUICK SEARCH layered NAVIGATION
 .currently .actions { border: 1px solid #fff; padding: 3px 7px 2px; margin-bottom: 20px; width: 69px; }
 .currently .actions a { color: #fff; text-decoration: none;  }
 .m-expandable-filter { margin-top: 5px; }
-#explain { display:none;color:#c00;padding:5px;font-size: 16px; font-weight: bold; margin-bottom: 15px; background:#eee;border:2px solid; text-transform: none; }
+#explain { display:none;color:#ec4c50;padding:5px;font-size: 16px; font-weight: bold; margin-bottom: 15px; background:#eee;border:2px solid; text-transform: none; }
 
 /* ZOOM */
 .cloud-zoom-gallery {float:left;display:inline-block;height:60px;width:71px;margin-right:5px;margin-bottom:5px;}
@@ -580,7 +580,7 @@ img.pressBadge {max-width: 160px; padding: 5px; }
 }
 
 /* Contact Us */
-.contact-nav li { border-right: 1px solid #ec4c50; display: inline-block; float: left; min-height: 110px; padding: 0 4%; width: 26%; }
+.contact-nav li { border-right: 1px solid #8acede; display: inline-block; float: left; min-height: 110px; padding: 0 4%; width: 26%; }
 .contact-nav li.last { border: 0; padding-right: 0; }
 .contact-info { clear: both; }
 .contact-info li { border-top: 1px solid #8acede; height: 40px; margin: 5px 0; padding: 25px 0 5px 90px; width: 620px; }
@@ -588,6 +588,11 @@ img.pressBadge {max-width: 160px; padding: 5px; }
 .contact-info .call { background: url('../images/phone.jpg') 10px 17px no-repeat; }
 .contact-info .ship { background: url('../images/truck.jpg') 10px 17px no-repeat; }
 .contact-info .pin { background: url('../images/pin.jpg') 10px 17px no-repeat; }
+
+.mb-search-result .page-title { margin-top: 0; }
+.mb-search-result .category-product { margin-top: 0; }
+.out-of-stock { background: url('../images/out-of-stock.png') no-repeat; height: 60px; width: 60px; overflow: hidden; text-indent: -999em; }
+.out-of-stock span { text-align: -999em; }
 
 .cms-page-view .contact-faq-sidebar h3 { color: #666; font-family: 'proxima-nova' !important; font-size: 19px !important; margin-bottom: 10px !important; }
 .cms-page-view .contact-faq-sidebar a {  color: #ec4c50; text-decoration: none; display: block; margin-bottom: 8px; }

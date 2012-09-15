@@ -113,7 +113,7 @@ jQuery(function($){
   $('span.m-selected-filter-item').live('click', function(){
     var currentlyPos = $('.currently').offset().top;
     $('body,html').animate({'scrollTop':currentlyPos+'px'}, 600);
-    $('#explain').show().html('Remove items from your search or clear all here.');
+    $('#explain').show().html('Click the X next to the items you want to remove from your search.');
    // $('#explain').delay(1200).remove();
   });
 
